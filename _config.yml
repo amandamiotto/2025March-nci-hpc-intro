@@ -100,10 +100,10 @@ episode_order:
 carpentry: "incubator"
 
 # Overall title for pages.
-title: "Introduction to High-Performance Computing"
+title: "Introduction to High-Performance Computing on NCI's Gadi"
 
 # Email address, no mailto:
-email: "team@carpentries.org"
+email: "training@qcif.edu.au"
 
 # Life cycle stage of the lesson ("pre-alpha", "alpha", "beta", "stable")?
 life_cycle: "alpha"
