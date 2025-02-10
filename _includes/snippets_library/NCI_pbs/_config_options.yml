@@ -9,7 +9,7 @@ remote:
   login: "gadi.nci.org.au"
   host: "login12.myriad.ucl.ac.uk"
   node: node-d00a-005
-  location: "University College London"
+  location: "Gadi"
   homedir: "/home"
   user: "yourUsername"
   prompt: "[yourUsername@login12 ~]$ "
