@@ -16,7 +16,7 @@ remote:
   bash_shebang: "#!/bin/bash -l"
 
 sched:
-  name: "SGE"
+  name: "PBS"
   submit:
     name: "qsub"
     options: ""
