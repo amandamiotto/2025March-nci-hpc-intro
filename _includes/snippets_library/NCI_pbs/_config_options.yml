@@ -1,5 +1,5 @@
-# UCL, University College London: Myriad + SGE
-snippets: "/snippets_library/UCL_Myriad_sge"
+# NCI QCIF workshop with PBS
+snippets: "/snippets_library/NCI_pbs"
 
 local:
   prompt: "[user@laptop ~]$"
