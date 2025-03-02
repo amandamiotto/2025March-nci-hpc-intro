@@ -106,7 +106,7 @@ title: "Introduction to High-Performance Computing on NCI's Gadi"
 email: "training@qcif.edu.au"
 
 # Life cycle stage of the lesson ("pre-alpha", "alpha", "beta", "stable")?
-life_cycle: "alpha"
+life_cycle: "stable"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
