@@ -11,6 +11,10 @@ programming in just two days' teaching time. Instead, this workshop is intended
 to give students a good introduction and overview of the tools available and
 how to use them effectively.
 
+## Meet our HPC Gadi
+
+Our workshop today is going to use the High Performance Compute Cluster named 'Gadi', which is located at the [National Computational Infrastucture](https://nci.org.au/about-us/who-we-are). 
+
 > ## Prerequisites
 >
 > Command line experience is necessary for this lesson. We recommend the
