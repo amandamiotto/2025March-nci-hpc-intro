@@ -35,8 +35,6 @@ By the end of this workshop, students will know how to:
 > any installation instructions.
 {: .callout}
 
-Note that this is the draft HPC Carpentry release. Comments and feedback are
-welcome.
 
 > ## For Instructors
 >
