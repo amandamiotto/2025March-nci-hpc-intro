@@ -140,3 +140,14 @@ anything.
 [putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 [unix-emulator]: https://www.cygwin.com/
 [wsl]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
+# NCI website and help documentation
+
+## The NCI help website
+
+NCI have an indepth help and documentation page available at [https://opus.nci.org.au/display/Help/NCI+Help](https://opus.nci.org.au/display/Help/NCI+Help) .
+
+You can reset your password here: [https://my.nci.org.au/mancini/reset/password/](https://my.nci.org.au/mancini/reset/password/) .
+You can review your NCI account password here: [https://my.nci.org.au/mancini/login](https://my.nci.org.au/mancini/login) .
+
+
