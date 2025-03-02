@@ -141,7 +141,7 @@ anything.
 [unix-emulator]: https://www.cygwin.com/
 [wsl]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
-# NCI website and help documentation
+
 
 ## The NCI help website
 
