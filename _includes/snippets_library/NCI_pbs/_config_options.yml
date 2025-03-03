@@ -8,7 +8,7 @@ remote:
   name: "Gadi"
   login: "gadi.nci.org.au"
   host: "gadi.nci.org.au"
-  node: node-d00a-005
+  node: gadi-login-04
   location: "Gadi"
   homedir: "/home"
   user: "yourUsername"
