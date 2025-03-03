@@ -85,6 +85,16 @@ on though so we will adopt the following convention:
   terminal connected to the remote system
 * `$` when it really doesn't matter which system the terminal is connected to.
 
+## A different way to log in - Using Australia Research Environment
+
+NCI also have available a way to log in through a website called Australia Research 
+Environment [are.nci.org.au](are.nci.org.au). If you are having issues accessing 
+login via ssh, this can be used for today's workshop. 
+
+Log in with your NCI username (not email) and password, and click 'Gadi Terminal'.
+
+![Screenshot of ARI]({{ site.url }}/assets/GADI.ARI.png)
+
 ## Looking Around Your Remote Home
 
 Very often, many users are tempted to think of a high-performance computing
@@ -151,39 +161,6 @@ keys and a record of authorized connections.
 
 {% unless site.remote.portal %}
 
-### Install Your SSH Key
-
-> ## There May Be a Better Way
->
-> Policies and practices for handling SSH keys vary between HPC clusters:
-> follow any guidance provided by the cluster administrators or
-> documentation. In particular, if there is an online portal for managing SSH
-> keys, use that instead of the directions outlined here.
-{: .callout}
-
-If you transferred your SSH public key with `scp`, you should see
-`id_ed25519.pub` in your home directory. To "install" this key, it must be
-listed in a file named `authorized_keys` under the `.ssh` folder.
-
-If the `.ssh` folder was not listed above, then it does not yet
-exist: create it.
-
-```
-{{ site.remote.prompt }} mkdir ~/.ssh
-```
-{: .language-bash}
-
-Now, use `cat` to print your public key, but redirect the output, appending it
-to the `authorized_keys` file:
-
-```
-{{ site.remote.prompt }} cat ~/id_ed25519.pub >> ~/.ssh/authorized_keys
-```
-{: .language-bash}
-
-That's all! Disconnect, then try to log back into the remote: if your key and
-agent have been configured correctly, you should not be prompted for the
-password for your SSH key.
 
 ```
 {{ site.remote.prompt }} logout
