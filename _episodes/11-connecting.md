@@ -122,6 +122,10 @@ on though so we will adopt the following convention:
   terminal connected to the remote system
 * `$` when it really doesn't matter which system the terminal is connected to.
 
+### Different number in prompt?
+
+You may see a different number in the prompt ({{ site.remote.prompt }}) next to gadi-login- number number. That's perfectly fine. 
+
 ## A different way to log in - Using Australia Research Environment
 
 NCI also have available a way to log in through a website called Australia Research 
