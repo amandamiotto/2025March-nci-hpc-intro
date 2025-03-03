@@ -48,7 +48,7 @@ remote:
   homedir: "/home"
   user: "yourUsername"
   module_python3: "Python"
-  prompt: "[yourUsername@login1 ~]$"
+  prompt: "[yourUsername@gadi-login-04 ~]$"
   bash_shebang: "#!/bin/bash"
 
 sched:
@@ -72,7 +72,7 @@ sched:
   del: "scancel"
   interactive: "srun"
   info: "sinfo"
-  comment: "#SBATCH"
+  comment: "#PBS"
   hist: "sacct -u yourUsername"
   hist_filter: ""
 
