@@ -97,7 +97,7 @@ episode_order:
 # "dc":  Data Carpentry
 # "lc":  Library Carpentry
 # "cp":  Carpentries (e.g., instructor training)
-carpentry: "incubator"
+carpentry: "swc"
 
 # Overall title for pages.
 title: "Introduction to High-Performance Computing on NCI's Gadi"
