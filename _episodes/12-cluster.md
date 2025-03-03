@@ -103,6 +103,10 @@ system files and change as you install new software or upgrade your OS.
 >   manage the space yourself.
 {: .callout}
 
+{% include figure.html url="" max-width="70%"
+   file="/fig/filepathgadi.png"
+   alt="filepath cluster" caption="" %}
+
 ## Let's explore some important folders specific to Gadi
 
 For further information, you can see [this Gadi documentation page](https://opus.nci.org.au/spaces/Help/pages/230490763/Gadi+Quick+Reference+Guide...)
