@@ -95,13 +95,73 @@ system files and change as you install new software or upgrade your OS.
 >   computer and is being transmitted and made available over the network!
 > * __Scratch__ -- typically faster than the networked Home directory, but not
 >   usually backed up, and should not be used for long term storage.
-> * __Work__ -- sometimes provided as an alternative to Scratch space, Work is
+> * __Data__ -- sometimes provided as an alternative to Scratch space, Work is
 >   a fast file system accessed over the network. Typically, this will have
 >   higher performance than your home directory, but lower performance than
 >   Scratch; it may not be backed up. It differs from Scratch space in that
 >   files in a work file system are not automatically deleted for you: you must
 >   manage the space yourself.
 {: .callout}
+
+## Let's explore some important folders specific to Gadi
+
+For further information, you can see [this Gadi documentation page](https://opus.nci.org.au/spaces/Help/pages/230490763/Gadi+Quick+Reference+Guide...)
+
+### Home
+
+You will usually start in your home folder, it would look like this. The command 'pwd' says 'Print the Working Directory'. Your home will be /home/YourProjectName/YourUsername. On Gadi, you are limited to 10Gb size quota. 
+
+```
+{{ site.remote.prompt }} pwd
+```
+{: .language-bash}
+```
+/home/578/am9079
+```
+{: .output}
+
+
+### Scratch
+
+Scratch is the place for very short term processing. 
+
+Scratch is intended to be used as the main computing space for your compute needs. However, once your jobs have run, please move your data to a different directory. Files left in scratch for 100 days will be quarantined and potentially deleted permanently. 
+
+```
+{{ site.remote.prompt }} ls /scratch/
+```
+{: .language-bash}
+```
+cd82    public
+```
+{: .output}
+
+In place of cd82 you may have another folder name. Let's look inside that folder - you will find a folder with your username in there. 
+
+
+```
+{{ site.remote.prompt }} ls /scratch/cd82/YourUserName/
+```
+{: .language-bash}
+```
+tmp
+```
+{: .output}
+
+There's a folder in here called tmp - often shorthand for temporary. This is a place for us to store short term files for processing.
+
+### Data
+
+Data is the better place for longer term storage. BUT NOTE- this is not backed up. You should still keep a copy of any important files on your institute's research data store. 
+
+```
+{{ site.remote.prompt }} ls /g/data
+```
+{: .language-bash}
+```
+tmp
+```
+{: .output}
 
 ## Nodes
 
