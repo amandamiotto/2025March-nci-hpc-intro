@@ -129,7 +129,7 @@ You will usually start in your home folder, it would look like this. The command
 
 Scratch is the place for very short term processing. 
 
-Scratch is intended to be used as the main computing space for your compute needs. However, once your jobs have run, please move your data to a different directory. Files left in scratch for 100 days will be quarantined and potentially deleted permanently. 
+Scratch is intended to be used as the main computing space for your compute needs. However, once your jobs have run, please move your data to a different directory. Files left in scratch for 100 days will be quarantined and potentially deleted permanently. You will get 1TB by default and are able to request more. 
 
 ```
 {{ site.remote.prompt }} ls /scratch/
@@ -156,7 +156,7 @@ There's a folder in here called tmp - often shorthand for temporary. This is a p
 
 ### Data
 
-Data is the better place for longer term storage. BUT NOTE- this is not backed up. You should still keep a copy of any important files on your institute's research data store. 
+Data is the better place for longer term storage. BUT NOTE- this is not backed up. You should still keep a copy of any important files on your institute's research data store. The size limit is set by the scheme manager. 
 
 ```
 {{ site.remote.prompt }} ls /g/data
