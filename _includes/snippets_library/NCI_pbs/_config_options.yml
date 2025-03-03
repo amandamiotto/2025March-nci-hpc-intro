@@ -10,9 +10,9 @@ remote:
   host: "gadi.nci.org.au"
   node: gadi-login-04
   location: "Gadi"
-  homedir: "/home"
+  homedir: "/home/123/yourUsername"
   user: "yourUsername"
-  prompt: "[yourUsername@gadiHeadNode ~]$ "
+  prompt: "[yourUsername@gadi-login-04 ~ ~]$ "
   bash_shebang: "#!/bin/bash -l"
 
 sched:
