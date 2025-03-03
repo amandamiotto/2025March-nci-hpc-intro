@@ -130,9 +130,13 @@ login via ssh, this can be used for today's workshop.
 
 Log in with your NCI username (not email) and password, and click 'Gadi Terminal'.
 
-![Screenshot of ARI]({{ site.url }}(GADI.ARI.png)
+![Screenshot of ARI]({{ site.url }}GADI.ARI.png)
 
 
+
+{% include figure.html url="" max-width="50%"
+   file="/fig/GADI.ARI.png"
+   alt="Screenshot of ARI" caption="" %}
 
 
 ## Looking Around Your Remote Home
