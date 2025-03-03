@@ -75,7 +75,7 @@ ED25519 key fingerprint is SHA256:abunchofnumbersandletterslkajsdlkfjalfj.
 This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? 
 ```
-{: .language-bash}
+
 
 Type in 'yes'
 
@@ -101,7 +101,7 @@ once you press `Enter`.
 {{ site.remote.prompt }}
 
 ```
-{: .language-bash}
+
 
 This means you have logged on successfully.
 
