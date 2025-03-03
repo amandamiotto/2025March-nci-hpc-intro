@@ -175,7 +175,7 @@ Great, we know where we are! Let's see what's in our current directory:
 ```
 {: .language-bash}
 ```
-id_ed25519.pub
+ondemand
 ```
 {: .output}
 
@@ -189,8 +189,7 @@ double-check, include hidden files in your directory listing:
 ```
 {: .language-bash}
 ```
-  .            .bashrc           id_ed25519.pub
-  ..           .ssh
+  .            ..    .bash_profile    .bashrc      .config     ondemand    .ssh
 ```
 {: .output}
 
@@ -205,6 +204,8 @@ keys and a record of authorized connections.
 
 ```
 {{ site.remote.prompt }} logout
+
+Connection to gadi.nci.org.au closed.
 ```
 {: .language-bash}
 
