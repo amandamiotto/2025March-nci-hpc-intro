@@ -65,6 +65,10 @@ Even if your cluster does not require it, the next section will guide you
 through the use of SSH keys and an SSH agent to both strengthen your security
 _and_ make it more convenient to log in to remote systems.
 
+
+<details>
+  <summary>Learn about SSH Keys</summary>
+    
 ### Better Security With SSH Keys
 
 The [Lesson Setup]({{ page.root }}/setup) provides instructions for installing
@@ -311,6 +315,8 @@ Use the **s**ecure **c**o**p**y tool to send your public key to the cluster.
 ```
 {: .language-bash}
 {% endif %}
+
+</details>
 
 ## Log In to the Cluster
 
