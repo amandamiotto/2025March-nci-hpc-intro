@@ -67,8 +67,9 @@ _and_ make it more convenient to log in to remote systems.
 
 
 <details>
-  <summary>Learn about SSH Keys</summary>
-    
+  <summary>##Learn about SSH Keys</summary>
+The following is information on how to set up SSH keys
+
 ### Better Security With SSH Keys
 
 The [Lesson Setup]({{ page.root }}/setup) provides instructions for installing
