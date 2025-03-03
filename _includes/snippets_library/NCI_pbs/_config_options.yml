@@ -7,12 +7,12 @@ local:
 remote:
   name: "Gadi"
   login: "gadi.nci.org.au"
-  host: "login12.myriad.ucl.ac.uk"
+  host: "gadi.nci.org.au"
   node: node-d00a-005
   location: "Gadi"
   homedir: "/home"
   user: "yourUsername"
-  prompt: "[yourUsername@login12 ~]$ "
+  prompt: "[yourUsername@gadiHeadNode ~]$ "
   bash_shebang: "#!/bin/bash -l"
 
 sched:
