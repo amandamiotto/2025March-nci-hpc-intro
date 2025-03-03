@@ -39,10 +39,10 @@ local:
   bash_shebang: "#!/usr/bin/env bash"
 
 remote:
-  name: "HPC Carpentry's Cloud Cluster"
-  login: "cluster.hpc-carpentry.org"
-  portal: "https://mokey.cluster.hpc-carpentry.org"
-  host: "login1"
+  name: "Gadi Cluster"
+  login: "gadi.nci.org.au"
+  portal: "https://my.nci.org.au/mancini/"
+  host: "gadi.nci.org.au"
   node: "node1"
   location: "cluster.hpc-carpentry.org"
   homedir: "/home"
@@ -52,14 +52,14 @@ remote:
   bash_shebang: "#!/bin/bash"
 
 sched:
-  name: "Slurm"
+  name: "PBS"
   submit:
-    name: "sbatch"
+    name: "qsub"
     options: ""
   queue:
     debug: "smnode"
     testing: "cpubase_bycore_b1"
-  status: "squeue"
+  status: "qstat"
   flag:
     user: "-u yourUsername"
     interactive: ""
