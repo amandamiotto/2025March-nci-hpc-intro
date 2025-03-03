@@ -64,9 +64,46 @@ supplied by the instructors.
 ```
 {: .language-bash}
 
+
+## What you'll see as a response
+
+When you first log in, it will give you a prompt similar to below:
+
+```
+The authenticity of host 'gadi.nci.org.au (203.0.19.85)' can't be established.
+ED25519 key fingerprint is SHA256:abunchofnumbersandletterslkajsdlkfjalfj.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+```
+{: .language-bash}
+
+Type in 'yes'
+
+
 You may be asked for your password. Watch out: the characters you type after
 the password prompt are not displayed on the screen. Normal output will resume
 once you press `Enter`.
+
+
+```
+{{ site.remote.user }}@{{ site.remote.login }}'s password: 
+###############################################################################
+#                  Welcome to the NCI National Facility!                      #
+#      This service is for authorised clients only. It is a criminal          #
+#      offence to:                                                            #
+#                - Obtain access to data without permission                   #
+#                - Damage, delete, alter or insert data without permission    #
+#      Use of this system requires acceptance of the Conditions of Use        #
+#      published at http://nci.org.au/users/nci-terms-and-conditions-access   #
+###############################################################################
+|         gadi.nci.org.au - 260,760 processor InfiniBand x86_64 cluster       | 
+===============================================================================
+{{ site.remote.prompt }}
+
+```
+{: .language-bash}
+
+This means you have logged on successfully.
 
 You may have noticed that the prompt changed when you logged into the remote
 system using the terminal (if you logged in using PuTTY this will not apply
@@ -94,6 +131,9 @@ login via ssh, this can be used for today's workshop.
 Log in with your NCI username (not email) and password, and click 'Gadi Terminal'.
 
 ![Screenshot of ARI]({{ site.url }}/assets/GADI.ARI.png)
+
+
+
 
 ## Looking Around Your Remote Home
 
