@@ -108,8 +108,11 @@ system files and change as you install new software or upgrade your OS.
    alt="filepath cluster" caption="" %}
 
 #### For this workshop:
+
 QCIF training Project Number: **cd82**
+
 QCIF training Institute Number **578**
+
 
 Post workshop, when you are allocated an account on NCI, you can check your Project number and Institute number via [The NCI account portal](https://my.nci.org.au/mancini/login)
 
