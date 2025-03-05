@@ -124,7 +124,7 @@ on though so we will adopt the following convention:
 
 ### Different number in prompt?
 
-You may see a different number in the prompt ({{ site.remote.prompt }}) next to gadi-login- number number. That's perfectly fine. 
+You may see a different number in the prompt [yourUsername@gadi-login-**04** ~]$ instead of 04. That's perfectly fine. 
 
 ## A different way to log in - Using Australia Research Environment
 
