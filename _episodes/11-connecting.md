@@ -129,7 +129,7 @@ You may see a different number in the prompt [yourUsername@gadi-login-**04** ~]$
 ## A different way to log in - Using Australia Research Environment
 
 NCI also have available a way to log in through a website called Australia Research 
-Environment [are.nci.org.au](are.nci.org.au). If you are having issues accessing 
+Environment [https://are.nci.org.au](https://are.nci.org.au). If you are having issues accessing 
 login via ssh, this can be used for today's workshop. 
 
 Log in with your NCI username (not email) and password, and click 'Gadi Terminal'.
