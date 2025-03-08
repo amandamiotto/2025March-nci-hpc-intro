@@ -19,6 +19,21 @@ keypoints:
 - "Performance improvements from parallel execution do not scale linearly."
 ---
 
+
+## Different types of HPC programming models
+
+When designing your code, you may consider exploring other HPC programming models. Here's a high level explainer, so you know what is possible.
+
+**OpenMP:** A tool that helps programs run faster by splitting tasks across multiple CPU cores within a single computer. It’s great for speeding up loops and simple parallel tasks without needing a lot of extra coding effort.
+
+**OpenACC:** Similar to OpenMP but designed for GPUs, allowing scientists and engineers to accelerate their code on powerful graphics cards with minimal changes. It’s useful for easily adapting existing CPU-based programs to run on GPUs.
+
+**CUDA:** A programming model created by NVIDIA that gives developers more direct control over GPUs, making it possible to fine-tune performance for tasks like simulations and deep learning. Unlike OpenACC, CUDA requires writing code specifically for NVIDIA GPUs.
+
+**MPI (Message Passing Interface):** Used when a program needs to run across multiple computers (nodes) in an HPC cluster, allowing them to communicate and work together on a big problem. It’s essential for large-scale simulations, like weather forecasting or molecular modeling.
+
+## Next steps
+
 We now have the tools we need to run a multi-processor job. This is a very
 important aspect of HPC systems, as parallelism is one of the primary tools
 we have to improve the performance of computational tasks.
