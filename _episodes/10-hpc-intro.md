@@ -52,6 +52,19 @@ In all these cases, access to more (and larger) computers is needed. Those
 computers should be usable at the same time, __solving many researchers'
 problems in parallel__.
 
+## What is a High Performance Compute Cluster?
+
+HPC's are basically a lot of computers joined together. Their computers and configurations come in different shapes and sizes, to handle different needs and use cases. They are run with a 'head node', who coordinates what jobs go where.
+
+Think about this - In your car, you have the space to store and move a few boxes around. But what happens when you have 100s of boxes to move? 
+
+You can think of a HPC as a fleet of trucks for moving stuff around. Some are normal sized like your typical delivery truck, for when you need to move a lot of small items. Some are big flat beds, for moving giant deliveries like cars or heavy machinery around. And they all are organised by a depo, who tells the trucks where to go, what to pick up and what to drop off.
+
+Our HPCs are the same. You may need to do a lot of little calculations - so you have a lot of little boxes to move, or you may need multiple delivery trucks. You may have only a couple of big calculations to do - but they're so big that they won't work on your computer. You need a really big computer to do that calculation - your big flat bed trucks.
+
+Our head node is our truck depo - it keeps track of what jobs go where, what types of trucks are available or where in the queue your job is. We don't need to deliver our job to each individual truck - we leave all our boxes at the head depo and let the depo do its job.
+
+
 ## Jargon Busting Presentation
 
 Open the [HPC Jargon Buster]({{ site.url }}{{ site.baseurl }}/files/jargon.html#p1)
@@ -90,6 +103,8 @@ separate window, then press `P` to toggle **p**resentation mode.
 > > servers working together.
 > {: .solution}
 {: .challenge }
+> 
+
 
 {% include links.md %}
 
