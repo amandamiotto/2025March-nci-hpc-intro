@@ -122,7 +122,7 @@ For further information, you can see [this Gadi documentation page](https://opus
 
 ### Home
 
-You will usually start in your home folder, it would look like this. The command 'pwd' says '***P***rint the ***W***orking ***D***irectory'. Your home will be /home/YourProjectName/YourUsername. On Gadi, you are limited to 10Gb size quota. 
+You will usually start in your home folder, it would look like this. The command 'pwd' says 'Print the Working Directory'. Your home will be /home/YourProjectName/YourUsername. On Gadi, you are limited to 10Gb size quota. 
 
 ```
 {{ site.remote.prompt }} pwd
@@ -162,6 +162,25 @@ tmp
 
 There's a folder in here called tmp - often shorthand for temporary. This is a place for us to store short term files for processing.
 
+### How much space do I have available?
+
+You can check how much quota of storage you have available by using the command lquota.
+
+```
+{{ site.remote.prompt }} ls lquota
+```
+{: .language-bash}
+```
+[am9079@gadi-login-09 ~]$ lquota
+--------------------------------------------------------------------------
+           fs       Usage      Quota      Limit   iUsage   iQuota   iLimit
+--------------------------------------------------------------------------
+  cd82 scratch   1.36 GiB   1.00 TiB   1.05 TiB    51446   202000   212100
+--------------------------------------------------------------------------
+
+```
+{: .output}
+
 ### Data
 
 Data is the better place for longer term storage. BUT NOTE- this is not backed up. You should still keep a copy of any important files on your institute's research data store. The size limit is set by the scheme manager. 
@@ -174,6 +193,10 @@ Data is the better place for longer term storage. BUT NOTE- this is not backed u
 tmp
 ```
 {: .output}
+
+
+
+
 
 ## Nodes
 
