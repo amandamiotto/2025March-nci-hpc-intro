@@ -163,12 +163,12 @@ tmp
 
 There's a folder in here called tmp - often shorthand for temporary. This is a place for us to store short term files for processing.
 
-### How much space do I have available?
+#### How much space do I have available?
 
 You can check how much quota of storage you have available by using the command lquota.
 
 ```
-{{ site.remote.prompt }} ls lquota
+{{ site.remote.prompt }} lquota
 ```
 {: .language-bash}
 ```
@@ -227,14 +227,17 @@ This may show only your user ID, but there are likely several other people
 
 > ## Dedicated Transfer Nodes
 >
-> If you want to transfer larger amounts of data to or from the cluster, some
-> systems offer dedicated nodes for data transfers only. The motivation for
+> If you want to transfer larger amounts of data to or from the cluster,
+> GADI offer dedicated nodes for data transfers only. The motivation for
 > this lies in the fact that larger data transfers should not obstruct
-> operation of the login node for anybody else. Check with your cluster's
-> documentation or its support team if such a transfer node is available. As a
+> operation of the login node for anybody else.  As a
 > rule of thumb, consider all transfers of a volume larger than 500 MB to 1 GB
-> as large. But these numbers change, e.g., depending on the network connection
-> of yourself and of your cluster or other factors.
+> as large.
+> Gadi has 6 six dedicated data-mover nodes that handle
+>  moving data to and from the system at a high speed.
+> These data-mover nodes have the domain name 'gadi-dm.nci.org.au',
+> and you can use this when moving data to and from the system.
+> We'll try them out in our transferring files lesson.
 {: .callout}
 
 The real work on a cluster gets done by the _compute_ (or _worker_) _nodes_.
