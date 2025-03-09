@@ -124,7 +124,7 @@ on though so we will adopt the following convention:
 
 ### Different number in prompt?
 
-You may see a different number in the prompt [yourUsername@gadi-login-**04** ~]$ instead of 04. That's perfectly fine. 
+You may see a different number in the prompt [yourUsername@gadi-login-__04__ ~]$ instead of 04. That's perfectly fine. 
 
 ## A different way to log in - Using Australia Research Environment
 
@@ -160,7 +160,7 @@ may also notice that the current hostname is also part of our prompt!)
 {: .output}
 
 So, we're definitely on the remote machine. Next, let's find out where we are
-by running `pwd` to **p**rint the **w**orking **d**irectory.
+by running `pwd` to __p__rint the __w__orking __d__irectory.
 
 ```
 {{ site.remote.prompt }} pwd
