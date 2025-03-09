@@ -95,7 +95,7 @@ system files and change as you install new software or upgrade your OS.
 >   computer and is being transmitted and made available over the network!
 > * __Scratch__ -- typically faster than the networked Home directory, but not
 >   usually backed up, and should not be used for long term storage.
-> * __Data__ -- sometimes provided as an alternative to Scratch space, Data is
+> * ___Data___ -- sometimes provided as an alternative to Scratch space, Data is
 >   a fast file system accessed over the network. Typically, this will have
 >   higher performance than your home directory, but lower performance than
 >   Scratch; it may not be backed up. It differs from Scratch space in that
@@ -111,7 +111,7 @@ system files and change as you install new software or upgrade your OS.
 
 QCIF training Project Number: __cd82__
 
-QCIF training Institute Number __578__
+QCIF training Institute Number: __578__
 
 
 Post workshop, when you are allocated an account on NCI, you can check your Project number and Institute number via [The NCI account portal](https://my.nci.org.au/mancini/login)
