@@ -399,8 +399,6 @@ There are times you will need your bigger and more specialised nodes.
 > {: .solution}
 {: .challenge}
 
-{% include {{ site.snippets }}/cluster/specific-node-info.snip %}
-
 > ## Compare Your Computer, the Login Node and the Compute Node
 >
 > Compare your laptop's number of processors and memory with the numbers you
