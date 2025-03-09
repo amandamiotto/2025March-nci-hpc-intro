@@ -259,6 +259,30 @@ connect to a shared, remote fileserver or cluster of servers.
    file="/fig/node_anatomy.png"
    alt="Node anatomy" caption="" %}
 
+
+## Let's consider our first examples again.....
+
+Let's look at our first examples again.
+
+1. A statistics student wants to cross-validate a model. This involves running
+  the model 1000 times -- but each run takes an hour. Running the model on
+  a laptop will take over a month!
+
+This student has lots of little boxes - we need multiple delivery trucks so boxes can be delivered independantly. We don't have to wait for box 1 to be delivered to deliver box 2.
+
+In HPC or IT language, what we need here is lots of smaller 'nodes' with average cores (CPU) and (RAM) memory. So we only need small nodes, but we do need lots of them.
+
+Think of nodes as our delivery vehicles, with the cores and memory specifying what type of truck, and how big it is.
+
+Something to consider - if we ask for a node is very large, then there may be quite a lineup in front of us, and we have to wait until it's available. Often, HPC clusters have lots of smaller nodes, but only a few large ones.
+A large node and a small node will normally take the same amount of time to run the same calculation- just like how a massive truck and a small delivery van would take the same amount of time to drive to a location. 
+
+So if you don't need the big nodes, your jobs will finish much faster by using smaller nodes.
+
+
+There are times you will need your bigger and more specialised nodes. 
+
+
 > ## Explore Your Computer
 >
 > Try to find out the number of CPUs and amount of memory available on your
