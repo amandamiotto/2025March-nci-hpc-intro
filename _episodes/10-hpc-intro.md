@@ -56,6 +56,8 @@ problems in parallel__.
 
 HPC's are basically a lot of computers joined together. Their computers and configurations come in different shapes and sizes, to handle different needs and use cases. They are run with a 'head node', who coordinates what jobs go where.
 
+#### Delivering 'boxes' of calculations
+
 Think about this - In your car, you have the space to store and move a few boxes around. But what happens when you have 100s of boxes to move? 
 
 You can think of a HPC as a fleet of trucks for moving stuff around. Some are normal sized like your typical delivery truck, for when you need to move a lot of small items. Some are big flat beds, for moving giant deliveries like cars or heavy machinery around. And they all are organised by a depo, who tells the trucks where to go, what to pick up and what to drop off.
