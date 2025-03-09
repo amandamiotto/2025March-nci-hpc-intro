@@ -89,13 +89,13 @@ system files and change as you install new software or upgrade your OS.
 > These differ in both the amount of space allocated and whether or not they
 > are backed up.
 >
-> * __Home__ -- often a _network filesystem_, data stored here is available
+> * ***Home*** -- often a _network filesystem_, data stored here is available
 >   throughout the HPC system, and often backed up periodically. Files stored
 >   here are typically slower to access, the data is actually stored on another
 >   computer and is being transmitted and made available over the network!
-> * __Scratch__ -- typically faster than the networked Home directory, but not
+> * ***Scratch*** -- typically faster than the networked Home directory, but not
 >   usually backed up, and should not be used for long term storage.
-> * ___Data___ -- sometimes provided as an alternative to Scratch space, Data is
+> * ***Data*** -- sometimes provided as an alternative to Scratch space, Data is
 >   a fast file system accessed over the network. Typically, this will have
 >   higher performance than your home directory, but lower performance than
 >   Scratch; it may not be backed up. It differs from Scratch space in that
@@ -109,9 +109,9 @@ system files and change as you install new software or upgrade your OS.
 
 #### For this workshop:
 
-QCIF training Project Number: __cd82__
+QCIF training Project Number: ***cd82***
 
-QCIF training Institute Number: __578__
+QCIF training Institute Number: ***578***
 
 
 Post workshop, when you are allocated an account on NCI, you can check your Project number and Institute number via [The NCI account portal](https://my.nci.org.au/mancini/login)
@@ -122,7 +122,7 @@ For further information, you can see [this Gadi documentation page](https://opus
 
 ### Home
 
-You will usually start in your home folder, it would look like this. The command 'pwd' says 'Print the Working Directory'. Your home will be /home/YourProjectName/YourUsername. On Gadi, you are limited to 10Gb size quota. 
+You will usually start in your home folder, it would look like this. The command 'pwd' says '***P***rint the ***W***orking ***D***irectory'. Your home will be /home/YourProjectName/YourUsername. On Gadi, you are limited to 10Gb size quota. 
 
 ```
 {{ site.remote.prompt }} pwd
