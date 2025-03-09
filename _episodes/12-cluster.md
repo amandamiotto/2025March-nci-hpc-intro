@@ -7,7 +7,7 @@ questions:
 - "How does the login node compare to the compute nodes?"
 - "Are all compute nodes alike?"
 objectives:
-- "Survey system resources using `nproc`, `free`, and the queuing system"
+- "Survey system resources and the queuing system"
 - "Compare & contrast resources on the local machine, login node, and worker
 nodes"
 - "Learn about the various filesystems on the cluster using `df`"
@@ -95,11 +95,11 @@ system files and change as you install new software or upgrade your OS.
 >   computer and is being transmitted and made available over the network!
 > * __Scratch__ -- typically faster than the networked Home directory, but not
 >   usually backed up, and should not be used for long term storage.
-> * __Data__ -- sometimes provided as an alternative to Scratch space, Work is
+> * __Data__ -- sometimes provided as an alternative to Scratch space, Data is
 >   a fast file system accessed over the network. Typically, this will have
 >   higher performance than your home directory, but lower performance than
 >   Scratch; it may not be backed up. It differs from Scratch space in that
->   files in a work file system are not automatically deleted for you: you must
+>   files in a Data file system are not automatically deleted for you: you must
 >   manage the space yourself.
 {: .callout}
 
@@ -109,9 +109,9 @@ system files and change as you install new software or upgrade your OS.
 
 #### For this workshop:
 
-QCIF training Project Number: **cd82**
+QCIF training Project Number: __cd82__
 
-QCIF training Institute Number **578**
+QCIF training Institute Number __578__
 
 
 Post workshop, when you are allocated an account on NCI, you can check your Project number and Institute number via [The NCI account portal](https://my.nci.org.au/mancini/login)
@@ -149,7 +149,6 @@ cd82    public
 ```
 {: .output}
 
-In place of cd82 you may have another folder name. Let's look inside that folder - you will find a folder with your username in there. 
 
 
 ```
