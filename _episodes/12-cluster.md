@@ -101,6 +101,7 @@ system files and change as you install new software or upgrade your OS.
 >   Scratch; it may not be backed up. It differs from Scratch space in that
 >   files in a Data file system are not automatically deleted for you: you must
 >   manage the space yourself.
+>   .
 {: .callout}
 
 {% include figure.html url="" max-width="70%"
