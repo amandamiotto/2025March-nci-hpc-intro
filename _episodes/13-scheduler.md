@@ -133,6 +133,47 @@ status, we check the queue using the command
 > launched it from. Use `ls` to find and `cat` to read the file.
 {: .discussion}
 
+```
+{{ site.remote.prompt }} ls
+```
+example-job.sh   example-job.sh.e136703330   example-job.sh.o136703330   ondemand
+```
+{: .language-bash}
+
+Output file: example-job.sh.o136703330
+Error file : example-job.sh.e136703330
+
+You will always get both, whether the job had an error or not. However, if you haven't gotten any PBS errors, the error file will be empty. The error file will only collect PBS errors and output that would normally go to Standard Error (stderr) on a terminal.
+
+```
+{{ site.remote.prompt }} cat example-job.sh.e3136703330
+```
+```
+{: .language-bash}
+
+The output file will show any output that would normally print to the terminal/screen, normally considered Standard Output (stout). In this case, it will show the output of PBS.
+
+```
+{{ site.remote.prompt }} cat example-job.sh.o3136703330
+```
+This script is running on gadi-cpu-clx-1997.gadi.nci.org.au
+
+======================================================================================
+                  Resource Usage on 2025-03-10 11:02:43:
+   Job Id:             136703330.gadi-pbs
+   Project:            cd82
+   Exit Status:        0
+   Service Units:      0.00
+   NCPUs Requested:    1                      NCPUs Used: 1               
+                                           CPU Time Used: 00:00:00        
+   Memory Requested:   500.0MB               Memory Used: 6.97MB          
+   Walltime requested: 10:00:00            Walltime Used: 00:00:00        
+   JobFS requested:    100.0MB                JobFS used: 0B              
+======================================================================================
+
+```
+{: .language-bash}
+
 ## Customising a Job
 
 The job we just ran used all of the scheduler's default options. In a
