@@ -135,7 +135,6 @@ status, we check the queue using the command
 
 ```
 {{ site.remote.prompt }} ls
-```
 example-job.sh   example-job.sh.e136703330   example-job.sh.o136703330   ondemand
 ```
 {: .language-bash}
