@@ -224,7 +224,8 @@ To show how this works,
 here are the components of `PATH` listed one per line:
 
 ~~~
-/Users/vlad/bin
+/home/578/am9079/.local/bin
+/home/578/am9079/bin
 /usr/local/git/bin
 /usr/bin
 /bin
@@ -239,12 +240,12 @@ there are actually three programs called `analyze`
 in three different directories:
 `/bin/analyze`,
 `/usr/local/bin/analyze`,
-and `/users/vlad/analyze`.
+and `/users/am9079/analyze`.
 Since the shell searches the directories in the order they're listed in `PATH`,
 it finds `/bin/analyze` first and runs that.
-Notice that it will *never* find the program `/users/vlad/analyze`
+Notice that it will *never* find the program `/users/am9079/analyze`
 unless we type in the full path to the program,
-since the directory `/users/vlad` isn't in `PATH`.
+since the directory `/users/am9079` isn't in `PATH`.
 
 This means that I can have executables in lots of different places as long as
 I remember that I need to to update my `PATH` so that my shell can find them.
