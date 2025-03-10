@@ -286,7 +286,7 @@ connect to a shared, remote fileserver or cluster of servers.
    alt="Node anatomy" caption="" %}
 
 
-## Let's consider our first examples again.....
+## Let's consider our first example again.....
 
 Let's look at our first examples again.
 
@@ -305,8 +305,16 @@ A large node and a small node will normally take the same amount of time to run 
 
 So if you don't need the big nodes, your jobs will finish much faster by using smaller nodes.
 
+## How about our second example?
 
-There are times you will need your bigger and more specialised nodes. 
+2. A genomics researcher has been using small datasets of sequence data, but soon
+   will be receiving a new type of sequencing data that is 10 times as large. It’s
+   already challenging to open the datasets on a computer – analyzing these larger
+   datasets will probably crash it. In this research problem, the calculations required 
+   might be impossible to parallelize, but a computer with more memory would be 
+   required to analyze the much larger future data set.
+
+This is when you would want a bigger and/or more specialised node. This genomics researcher doesn't need lots of small delivery vehicles - they need only one or two BIG delivery trucks. Or, in more HPC terms, large memory nodes, where the RAM is much bigger than what you would normally have available on your typical desktop computer.  Now, a HPC may only have a couple of these large memory nodes, so the wait time on these may be longer- but they can do the job where a normal desktop computer couldn't.
 
 
 > ## Explore Your Computer
