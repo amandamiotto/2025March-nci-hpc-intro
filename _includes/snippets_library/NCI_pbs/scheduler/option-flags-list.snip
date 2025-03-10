@@ -1,11 +1,26 @@
-* `-l h_rt=hours:minutes:seconds` &mdash; How much real-world time (walltime)
-  will your job take to run?
+* `-l walltime=<HH:MM:SS> ` &mdash; How much real-world time (walltime)
+  will your job take to run? It's best to get as close as possible, without exceeding the walltime
 
-* `-pe mpi <ncpus>` &mdash; How many CPUs does your job need? If you only need
-  one CPU you can leave this out.
+* `- P <project> ` &mdash; The project which you want to charge the jobs resource usage to. If missing in the submission, it is set to the default project in the shell environment from which the job is submitted.
+
+* `-q <queue> ` &mdash; The queue to run the job in. If missing in the submission, it is set to normal. Different queues have different limits o the amount of resources that can be requested using the -l directives.
+
+* `-l storage=<scratch/a00+gdata/xy11+massdata/a00> ` &mdash; Identifies the specific filesystems that the job will need access to, and is expressed as a plus-separated list of identifiers of the form <filesystem>/<project> . The valid filesystems are currently scratch (for Gadi's /scratch  filesystem), gdata (for NCI's global filesystems, mounted at /g/data  on Gadi), and massdata (for NCI's massdata storage facility, available through the mdss command from jobs in the copyq queue). All jobs implicitly have scratch/<project> included in this list, where <project> is the project that the job is running under. Locations that are not specified via this directive will not be available inside the job, and will result in, for example, "file not found" errors if you attempt to access them from the job. 
 
 * `-l mem=<bytes>` &mdash; How much memory per process does your job need? Must be
-  an integer followed by M, G, or T to specify Mega, Giga or Terabytes.
+  an integer followed by MB, GB, or TB to specify Mega, Giga or Terabytes. If missing in the submission, the value is set to 500 MiB. The memory allocation in a multi-node jobs will be distributed equally among every node. 
 
 * `-wd /home/<your_UCL_id>/Scratch/<your_run_directory>` &mdash; Set the working
   directory to somewhere in your scratch space.
+
+* `-l ncpus=<4> `  &mdash; The number of CPU cores to allocate to the job. If missing in the submission, the value is set to 1. 
+
+* `-l ngpus=<4> `  &mdash; The number of GPU devices to allocate to the job (for jobs in the gpuvolta queue).
+
+* `-M <user@example.com> `  &mdash; The list of addresses to which emails about the job will be sent.
+
+* `-m <abe> `  &mdash; The set of conditions under which email about the job is sent. It may be any combination of "a" for when the job is aborted by the batch system, "b" for when the job begins execution, and "e" for when the job ends execution. Alternatively, "n" for under no circumstances.
+
+* `-N <jobName>  `  &mdash; The name of the job. By default it is set to the name of the job submission script. If no submission script is used in the submission, the default job name is STDIN.
+
+* `- `  &mdash; 
