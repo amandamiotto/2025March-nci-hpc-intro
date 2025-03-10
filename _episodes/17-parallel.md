@@ -46,6 +46,10 @@ If you disconnected, log back in to the cluster.
 ```
 {: .language-bash}
 
+### Note on Python libraries
+
+NCI do not recommend installing packages directly using pip install. Instead,the recommendation is using a python virtual environment in the /scratch.  When using pip directly the packages will be installed in the /home/$USER directory and the space allocated for that directory is very limited. 
+
 ## Install the Amdahl Program
 
 With the Amdahl source code on the cluster, we can install it, which will
