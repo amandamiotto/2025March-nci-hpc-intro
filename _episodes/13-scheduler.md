@@ -349,7 +349,7 @@ successful.
 
 {% include {{ site.snippets }}/scheduler/terminate-job-cancel.snip %}
 
-{% include {{ site.snippets }}/scheduler/terminate-multiple-jobs.snip %}
+
 
 ## Other Types of Jobs
 
