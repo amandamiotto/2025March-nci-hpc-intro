@@ -24,10 +24,10 @@ sched:
   status: "qstat"
   flag:
     user: "-u yourUsername"
-    interactive: "-l mem=512M,h_rt=2:00:00"
+    interactive: "-I "
     name: "-N"
     histdetail: "-j"
-    time: "-l h_rt="
+    time: "-l walltime=<HH:MM:SS>"
     queue: "-q"
   del: "qdel"
   interactive: "qrsh"
