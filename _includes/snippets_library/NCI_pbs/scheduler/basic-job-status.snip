@@ -1,10 +1,13 @@
 ```
-job-ID  prior   name       user         state submit/start at     queue
--------------------------------------------------------------------------------
-3979883 3.50000 example-jo yourUser     r     06/25/2020 11:36:30 Arya@node-b00
+
+gadi-pbs: 
+                                                                 Req'd  Req'd   Elap
+Job ID               Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+-------------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+136703330.gadi-pbs   am9079   normal-* example-j*    --    1   1  500mb 10:00 Q   -- 
+
 ```
 {: .output}
 
-We can see all the details of our job, most importantly that it is in the `r`
-or `running` state. Sometimes our jobs might need to wait in a queue (`w` or
-`waiting`) or have an error (`E`).
+We can see all the details of our job including it's state. 
+Sometimes our jobs might need to wait in a queue (`Q`) or be actively running (`R`).
