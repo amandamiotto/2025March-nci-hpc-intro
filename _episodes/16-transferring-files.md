@@ -466,7 +466,9 @@ In this script, the following is specified:
 
 - That the copyq queue is to be used
     - #PBS -q copyq
-- A requirement on massdata (#PBS -lother=mdss).
+- A requirement on massdata
+    - #PBS -lother=mdss
+
 Then the actual commands to collate, and copy files to massdata:
 
 - Create a tar archive file of the data at /g/data/a00/aaa777/work1.
@@ -475,6 +477,10 @@ Then the actual commands to collate, and copy files to massdata:
 - Confirm the data has been copied across.
 
 To compile code inside a copyq job, it may be necessary to load modules such as intel-compiler, and request more jobfs to allow enough disk space to host data written to $TMPDIR.  
+
+## Transferring and using SSH keys on Gadi
+
+Instead of using a password, you can use a special file called a SSH key. This is covered in [this workshop](https://www.hpc-carpentry.org/hpc-shell/01-connecting/index.html)  and by [NCI documentation here](https://opus.nci.org.au/spaces/Help/pages/248840234/Using+SSH+Keys+on+Gadi...?src=contextnavpagetreemode)
 
 {% include links.md %}
 
