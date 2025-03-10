@@ -102,6 +102,7 @@ system files and change as you install new software or upgrade your OS.
 >   files in a Data file system are not automatically deleted for you: you must
 >   manage the space yourself.
 > * ***/g/data*** -- Where large datasets should go. There is also a repository of commonly used datasets that you can access. A catalogue can be found at [NCI Data Catalogue](https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home)
+> * ***Mass Data*** -- massdata is NCI's tape storage system. Not every project will have access to massdata, only those with a storage allocation. 
 >   .
 {: .callout}
 
@@ -287,13 +288,14 @@ connect to a shared, remote fileserver or cluster of servers.
    alt="Node anatomy" caption="" %}
 
 
-## Let's consider our first example again.....
+## Let's consider our use cases.....
 
-Let's look at our first examples again.
+### Let's look at our first example again.
 
-1. A statistics student wants to cross-validate a model. This involves running
-  the model 1000 times -- but each run takes an hour. Running the model on
-  a laptop will take over a month!
+> 1. A statistics student wants to cross-validate a model. This involves running
+>  the model 1000 times -- but each run takes an hour. Running the model on
+>  a laptop will take over a month!
+{: .callout}
 
 This student has lots of little boxes - we need multiple delivery trucks so boxes can be delivered independantly. We don't have to wait for box 1 to be delivered to deliver box 2.
 
@@ -306,14 +308,15 @@ A large node and a small node will normally take the same amount of time to run 
 
 So if you don't need the big nodes, your jobs will finish much faster by using smaller nodes.
 
-## How about our second example?
+### How about our second example?
 
-2. A genomics researcher has been using small datasets of sequence data, but soon
-   will be receiving a new type of sequencing data that is 10 times as large. It’s
-   already challenging to open the datasets on a computer – analyzing these larger
-   datasets will probably crash it. In this research problem, the calculations required 
-   might be impossible to parallelize, but a computer with more memory would be 
-   required to analyze the much larger future data set.
+> 2. A genomics researcher has been using small datasets of sequence data, but soon
+>    will be receiving a new type of sequencing data that is 10 times as large. It’s
+>    already challenging to open the datasets on a computer – analyzing these larger
+>    datasets will probably crash it. In this research problem, the calculations required 
+>    might be impossible to parallelize, but a computer with more memory would be 
+>    required to analyze the much larger future data set.
+>    {: .callout}
 
 This is when you would want a bigger and/or more specialised node. This genomics researcher doesn't need lots of small delivery vehicles - they need only one or two BIG delivery trucks. Or, in more HPC terms, large memory nodes, where the RAM is much bigger than what you would normally have available on your typical desktop computer.  Now, a HPC may only have a couple of these large memory nodes, so the wait time on these may be longer- but they can do the job where a normal desktop computer couldn't.
 
