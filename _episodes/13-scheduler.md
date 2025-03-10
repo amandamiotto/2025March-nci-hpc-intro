@@ -140,8 +140,8 @@ example-job.sh   example-job.sh.e136703330   example-job.sh.o136703330   ondeman
 {: .language-bash}
 
 
-Output file: example-job.sh.o136703330
-Error file : example-job.sh.e136703330
+> Output file: example-job.sh.o136703330
+> Error file : example-job.sh.e136703330
 
 You will always get both, whether the job had an error or not. However, if you haven't gotten any PBS errors, the error file will be empty. The error file will only collect PBS errors and output that would normally go to Standard Error (stderr) on a terminal.
 
