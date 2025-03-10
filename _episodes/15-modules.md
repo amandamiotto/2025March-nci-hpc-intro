@@ -94,9 +94,9 @@ message telling you so
 ## Loading and Unloading Software
 
 To load a software module, use `module load`. In this example we will use
-Python 3.
+R.
 
-Initially, Python 3 is not loaded. We can test this by using the `which`
+Initially, R is not loaded. We can test this by using the `which`
 command. `which` looks for programs the same way that Bash does, so we can use
 it to tell us where a particular piece of software is stored.
 
@@ -107,7 +107,22 @@ it to tell us where a particular piece of software is stored.
 
 {% include {{ site.snippets }}/modules/missing-python.snip %}
 
-We can load the `R ` command with `module load`:
+We can learn what R versions are available with `module avail R `:
+
+```
+{{ site.remote.prompt }} module avail R
+```
+{: .language-bash}
+
+
+```
+--------------------------------------------------- /apps/Modules/modulefiles ---------------------------------------------------
+R/3.6.1  R/4.0.0  R/4.1.0  R/4.2.1  R/4.2.2  R/4.3.1  R/4.4.2  
+
+```
+{: .output}
+
+Deciding we want to use version 4.4.2, We can load the `R ` command with `module load`:
 
 {% include {{ site.snippets }}/modules/module-load-python.snip %}
 
