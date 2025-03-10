@@ -1,4 +1,4 @@
----
+e---
 title: "Scheduler Fundamentals"
 teaching: 45
 exercises: 30
@@ -191,6 +191,37 @@ following the `{{ site.sched.comment }}` comment is interpreted as an
 instruction to the scheduler.
 
 There are a number of default options that are preset on {{ site.sched.name }}. [This NCI documentation](https://opus.nci.org.au/spaces/Help/pages/236881349/PBS+Directives...) can break some down for you. 
+
+
+Let's illustrate this by example. By default, a job's name is the name of the
+script, but the `{{ site.sched.flag.name }}` option can be used to change the
+name of a job. Add an option to the script:
+
+```
+{{ site.remote.prompt }} cat example-job.sh
+```
+{: .language-bash}
+
+```
+{{ site.remote.bash_shebang }}
+{{ site.sched.comment }} {{ site.sched.flag.name }} hello-world
+
+echo -n "This script is running on "
+hostname
+```
+{: .output}
+
+Submit the job and monitor its status:
+
+```
+{{ site.remote.prompt }} {{ site.sched.submit.name }} {% if site.sched.submit.options != '' %}{{ site.sched.submit.options }} {% endif %}example-job.sh
+{{ site.remote.prompt }} {{ site.sched.status }} {{ site.sched.flag.user }}
+```
+{: .language-bash}
+
+{% include {{ site.snippets }}/scheduler/job-with-name-status.snip %}
+
+Fantastic, we've successfully changed the name of our job!
 
 ### Resource Requests
 
