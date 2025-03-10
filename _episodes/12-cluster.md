@@ -94,7 +94,7 @@ system files and change as you install new software or upgrade your OS.
 >   here are typically slower to access, the data is actually stored on another
 >   computer and is being transmitted and made available over the network!
 > * ***Scratch*** -- typically faster than the networked Home directory, but not
->   usually backed up, and should not be used for long term storage.
+>   usually backed up, and should not be used for long term storage. Files are quarantined and deleted if not used for a long time.
 > * ***Data*** -- sometimes provided as an alternative to Scratch space, Data is
 >   a fast file system accessed over the network. Typically, this will have
 >   higher performance than your home directory, but lower performance than
