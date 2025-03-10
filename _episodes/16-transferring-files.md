@@ -16,6 +16,8 @@ Performing work on a remote computer is not very useful if we cannot get files
 to or from the cluster. There are several options for transferring data between
 computing resources using CLI and GUI utilities, a few of which we will cover.
 
+### NCI cover tranferring in [their documentation available here.](https://opus.nci.org.au/spaces/Help/pages/236880317/File+Transfer...)
+
 ## Download Lesson Files From the Internet
 
 One of the most straightforward ways to download files is to use either `curl`
