@@ -170,26 +170,7 @@ tell commercial software packages where to find license servers.
 The module command also restores these shell environment variables
 to their previous state when a module is unloaded.
 
-## Software Versioning
 
-So far, we've learned how to load and unload software packages. This is very
-useful. However, we have not yet addressed the issue of software versioning. At
-some point or other, you will run into issues where only one particular version
-of some software will be suitable. Perhaps a key bugfix only happened in a
-certain version, or version X broke compatibility with a file format you use.
-In either of these example cases, it helps to be very specific about what
-software is loaded.
-
-Let's examine the output of `module avail` more closely.
-
-```
-{{ site.remote.prompt }} module avail
-```
-{: .language-bash}
-
-{% include {{ site.snippets }}/modules/available-modules.snip %}
-
-{% include {{ site.snippets }}/modules/wrong-gcc-version.snip %}
 
 > ## Using Software Modules in Scripts
 >
