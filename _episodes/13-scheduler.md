@@ -1,4 +1,4 @@
-e---
+---
 title: "Scheduler Fundamentals"
 teaching: 45
 exercises: 30
