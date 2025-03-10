@@ -46,15 +46,17 @@ $ set
 {: .language-bash}
 
 ~~~
-COMPUTERNAME=TURING
-HOME=/home/vlad
-HOSTNAME=TURING
-HOSTTYPE=i686
-NUMBER_OF_PROCESSORS=4
-PATH=/Users/vlad/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-PWD=/home/vlad
-UID=1000
-USERNAME=vlad
+BASH=/bin/bash
+BASHOPTS=checkwinsize:cmdhist:complete_fullquote:expand_aliases:extquote:force_fignore:histappend:hostcomplete:interactive_comments:progcomp:promptvars:sourcepath
+BASHRCSOURCED=Y
+BASH_ALIASES=()
+BASH_ARGC=()
+BASH_ARGV=()
+BASH_CMDS=()
+BASH_ENV=/opt/Modules/v4.3.0/init/bash
+BASH_LINENO=()
+BASH_REMATCH=([0]="i")
+
 ...
 ~~~
 {: .output}
@@ -97,7 +99,7 @@ $ echo $HOME
 {: .language-bash}
 
 ~~~
-/home/vlad
+/home/578/am9079
 ~~~
 {: .output}
 
@@ -105,7 +107,7 @@ The dollar sign tells the shell that we want the *value* of the variable
 rather than its name.
 This works just like wildcards:
 the shell does the replacement *before* running the program we've asked for.
-Thanks to this expansion, what we actually run is `echo /home/vlad`,
+Thanks to this expansion, what we actually run is `echo /home/578/am9079`,
 which displays the right thing.
 
 ## Creating and Changing Variables
