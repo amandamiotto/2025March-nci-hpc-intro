@@ -101,6 +101,7 @@ system files and change as you install new software or upgrade your OS.
 >   Scratch; it may not be backed up. It differs from Scratch space in that
 >   files in a Data file system are not automatically deleted for you: you must
 >   manage the space yourself.
+> * ***/g/data*** -- Where large datasets should go. There is also a repository of commonly used datasets that you can access. A catalogue can be found at [NCI Data Catalogue](https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home)
 >   .
 {: .callout}
 
