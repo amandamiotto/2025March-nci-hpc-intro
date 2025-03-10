@@ -155,7 +155,6 @@ The output file will show any output that would normally print to the terminal/s
 
 ```
 {{ site.remote.prompt }} cat example-job.sh.o3136703330
-```
 This script is running on gadi-cpu-clx-1997.gadi.nci.org.au
 
 ======================================================================================
@@ -170,7 +169,6 @@ This script is running on gadi-cpu-clx-1997.gadi.nci.org.au
    Walltime requested: 10:00:00            Walltime Used: 00:00:00        
    JobFS requested:    100.0MB                JobFS used: 0B              
 ======================================================================================
-
 ```
 {: .language-bash}
 
