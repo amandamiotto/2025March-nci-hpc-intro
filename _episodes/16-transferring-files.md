@@ -277,33 +277,6 @@ Upload the lesson material to your remote home directory like so:
 ```
 {: .language-bash}
 
-> ## Why Not Download on {{ site.remote.name }} Directly?
->
-> Most computer clusters are protected from the open internet by a _firewall_.
-> For enhanced security, some are configured to allow traffic _inbound_, but
-> not _outbound_.
-> This means that an authenticated user can send a file to a cluster machine,
-> but a cluster machine cannot retrieve files from a user's machine or the
-> open Internet.
->
-> Try downloading the file directly. Note that it may well fail, and that's
-> OK!
->
-> > ## Commands
-> >
-> > ```
-> > {{ site.local.prompt }} ssh {{ site.remote.user }}@{{ site.remote.login }}
-> > {{ site.remote.prompt }} wget -O amdahl.tar.gz https://github.com/hpc-carpentry/amdahl/tarball/main
-> > # or
-> > {{ site.remote.prompt }} curl -o amdahl.tar.gz https://github.com/hpc-carpentry/amdahl/tarball/main
-> > ```
-> > {: .language-bash}
-> {: .solution}
->
-> Did it work? If not, what does the terminal output tell you about what
-> happened?
-{: .challenge}
-
 ## Transferring a Directory
 
 To transfer an entire directory, we add the `-r` flag for "**r**ecursive":
@@ -451,14 +424,57 @@ Hit "Quickconnect" to connect. You should see your remote files appear on the
 right hand side of the screen. You can drag-and-drop files between the left
 (local) and right (remote) sides of the screen to transfer files.
 
-{% include {{ site.snippets }}/transferring-files/filezilla-ssh-tunnel-instructions.snip %}
+## Large transfers via CopyQ
 
-Finally, if you need to move large files (typically larger than a gigabyte)
-from one remote computer to another remote computer, SSH in to the computer
-hosting the files and use `scp` or `rsync` to transfer over to the other. This
-will be more efficient than using FileZilla (or related applications) that
-would copy from the source to your local machine, then to the destination
-machine.
+For large transfer, over 500 GiB for instance, it is better to submit the transfer as a job to the copyq queue. 
+
+Further information through [NCI documentation can be found here](https://opus.nci.org.au/spaces/Help/pages/236880320/Job+Submission...).
+
+The login nodes are a shared space, at any time you could potentially be sharing the nodes with hundreds of other users while logged in. To make sure that everyone has fair access to these nodes, any job that runs for more than 30 minutes, or exceeded 4 GiB of memory, will be terminated. If you need to transfer a large amount of data, more than the amount allowed in the login nodes, NCI recommends that you submit it in a job within the copyq queue. 
+
+Copyq jobs have to be used for anything that requires:
+
+- Any internet access during running
+- Long software installations
+- Access to massdata (mdss)
+
+
+An example of a PBS script that uses the copyq queue to collate files from a directory, then send them to massdata could look like:
+
+```
+#!/bin/bash
+
+#PBS -l ncpus=1
+#PBS -l mem=2GB
+#PBS -l jobfs=2GB
+#PBS -q copyq
+#PBS -lother=mdss
+#PBS -P a00
+#PBS -l walltime=02:00:00
+#PBS -l storage=gdata/a00+massdata/a00
+#PBS -l wd
+  
+tar -cvf my_archive.tar /g/data/a00/aaa777/work1
+mdss -P a00 mkdir -p aaa777/test/
+mdss -P a00 put my_archive.tar aaa777/test/work1.tar
+mdss -P a00 dmls -ltrh aaa777/test
+```
+> {: .language-bash}
+
+
+In this script, the following is specified:
+
+- That the copyq queue is to be used
+    - #PBS -q copyq
+- A requirement on massdata (#PBS -lother=mdss).
+Then the actual commands to collate, and copy files to massdata:
+
+- Create a tar archive file of the data at /g/data/a00/aaa777/work1.
+- Make a directory aaa777/test/ on the massdata file system.
+- Copy the tar archive file to the massdata file system.
+- Confirm the data has been copied across.
+
+To compile code inside a copyq job, it may be necessary to load modules such as intel-compiler, and request more jobfs to allow enough disk space to host data written to $TMPDIR.  
 
 {% include links.md %}
 
