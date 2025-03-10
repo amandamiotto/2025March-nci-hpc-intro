@@ -139,6 +139,7 @@ example-job.sh   example-job.sh.e136703330   example-job.sh.o136703330   ondeman
 ```
 {: .language-bash}
 
+
 Output file: example-job.sh.o136703330
 Error file : example-job.sh.e136703330
 
@@ -147,8 +148,8 @@ You will always get both, whether the job had an error or not. However, if you h
 ```
 {{ site.remote.prompt }} cat example-job.sh.e3136703330
 ```
-```
 {: .language-bash}
+
 
 The output file will show any output that would normally print to the terminal/screen, normally considered Standard Output (stout). In this case, it will show the output of PBS.
 
