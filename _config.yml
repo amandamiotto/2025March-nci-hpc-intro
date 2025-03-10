@@ -65,7 +65,7 @@ sched:
     interactive: ""
     histdetail: "-l -j"
     name: "-N"
-    time: "-t"
+    time: "-l walltime"
     queue: "-p"
     nodes: "-N"
     tasks: "-n"
