@@ -428,6 +428,8 @@ right hand side of the screen. You can drag-and-drop files between the left
 
 For large transfer, over 500 GiB for instance, it is better to submit the transfer as a job to the copyq queue. 
 
+Gadi has 6 six dedicated data-mover nodes that handle exactly that, moving data to and from the system at a high speed.  These data-mover nodes have the domain name 'gadi-dm.nci.org.au', as seen below, and you can use this when moving data to and from the system.
+
 Further information through [NCI documentation can be found here](https://opus.nci.org.au/spaces/Help/pages/236880320/Job+Submission...).
 
 The login nodes are a shared space, at any time you could potentially be sharing the nodes with hundreds of other users while logged in. To make sure that everyone has fair access to these nodes, any job that runs for more than 30 minutes, or exceeded 4 GiB of memory, will be terminated. If you need to transfer a large amount of data, more than the amount allowed in the login nodes, NCI recommends that you submit it in a job within the copyq queue. 
