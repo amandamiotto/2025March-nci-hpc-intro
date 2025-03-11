@@ -54,24 +54,31 @@ NCI do not recommend installing packages directly using pip install. Instead,the
 
 Let's tell Python to download the python libraries into the /scratch folder. 
 
-```
-{{ site.local.prompt }} mkdir /scratch/cd82/YourUserName/pythoninstalls/
-{{ site.local.prompt }} python3 -m venv /scratch/cd82/YourUserName/pythoninstalls/
-{{ site.local.prompt }} source /scratch/cd82/YourUserName/pythoninstalls/bin/activate
-```
-{: .language-bash}
+If you want to install Python packages under a virtual environment, follow the below procedures:
 
-
-## Install the Amdahl Program
-
-With the Amdahl source code on the cluster, we can install it, which will
-provide access to the `amdahl` executable.
-Move into the extracted directory, then use the Package Installer for Python,
-or `pip`, to install it in your ("user") home directory:
 
 ```
-{{ site.remote.prompt }} cd amdahl
-{{ site.remote.prompt }} python3 -m pip install --user .
+# Unload modules
+$ module unload intel-compiler intel-mkl python python2 python3 openmpi 
+ 
+# Load modules, always specify version number.
+$ module load python3/3.12.1
+$ module load openmpi/5.0.5
+
+
+mkdir /scratch/cd82/YourUsername/pythoninstalls
+
+# Create a virtual environment from python3/3.12.1, if already not created.
+$ python3 -m venv --system-site-packages /scratch/cd82/YourUsername/pythoninstalls
+ 
+# Activate your virtual environment
+$ source /scratch/cd82/YourUsername/pythoninstalls/bin/activate
+ 
+# Install Python packages under the activated virtual environment
+$ python3 -m pip install -v --no-binary :all: --cache-dir=$TMPDIR mpi4py
+ 
+# Deactivate the virtual environment
+$ deactivate
 ```
 {: .language-bash}
 
@@ -87,7 +94,20 @@ To confirm that this has worked, we can use 'which'. Your bash prompt will also 
 ```
 {: .output}
 
-Fantastic! We can see that we are now pointing to the correct python library location.
+
+## Install the Amdahl Program
+
+With the Amdahl source code on the cluster, we can install it, which will
+provide access to the `amdahl` executable.
+Move into the extracted directory, then use the Package Installer for Python,
+or `pip`, to install it in your ("user") home directory:
+
+```
+{{ site.remote.prompt }} cd amdahl
+{{ site.remote.prompt }} python3 -m pip install --user .
+```
+{: .language-bash}
+
 
 
 > ## Amdahl is Python Code
