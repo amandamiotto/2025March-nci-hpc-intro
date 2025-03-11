@@ -46,13 +46,23 @@ If you disconnected, log back in to the cluster.
 ```
 {: .language-bash}
 
+> ## Amdahl is Python Code
+>
+> The Amdahl program is written in Python, and installing or using it requires
+> locating the `python3` executable on the login node. The Amdahl code has one dependency:
+> the MPI library for Python called __mpi4py__.
+
+{: .callout}
+
+
+
 ### Note on Python libraries
 
 NCI do not recommend installing packages directly using pip install. Instead,the recommendation is using a python virtual environment in the /scratch, which you can then direct pip install to do your installations into.  When using pip directly the packages will be installed in the /home/$USER directory and the space allocated for that directory is very limited. 
 
 ## Define where the Python libraries should be installed
 
-Let's tell Python to download the python libraries into the /scratch folder. 
+For our next example, we need the library openMPI from Python. Let's tell Python to download the python libraries into the /scratch folder. 
 
 If you want to install Python packages under a virtual environment, follow the below procedures:
 
@@ -103,25 +113,10 @@ Move into the extracted directory, then use the Package Installer for Python,
 or `pip`, to install it in your ("user") home directory:
 
 ```
-{{ site.remote.prompt }} cd amdahl
+{{ site.remote.prompt }} cd ~/amdahl
 {{ site.remote.prompt }} python3 -m pip install .
 ```
 {: .language-bash}
-
-
-
-> ## Amdahl is Python Code
->
-> The Amdahl program is written in Python, and installing or using it requires
-> locating the `python3` executable on the login node.
-> If it can't be found, try listing available modules using `module avail`,
-> load the appropriate one, and try the command again.
-{: .callout}
-
-### MPI for Python
-
-The Amdahl code has one dependency: __mpi4py__.
-
 
 
 ## Help!
