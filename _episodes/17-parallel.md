@@ -185,34 +185,49 @@ reverse-chronological order: newest first. What was the output?
 > ```
 > {: .language-bash}
 > ```
-> slurm-347087.out  serial-job.sh  amdahl  README.md  LICENSE.txt
+> solo-job.o347087 solo-job.e347087 serial-job.sh  amdahl  README.md  LICENSE.txt
 > ```
 > {: .output}
 > ```
-> {{ site.remote.prompt }} cat slurm-347087.out
+> {{ site.remote.prompt }} cat solo-job.o347087
 > ```
 > {: .language-bash}
 > ```
-> Doing 30.000 seconds of 'work' on 1 processor,
-> which should take 30.000 seconds with 0.850 parallel proportion of the workload.
+> Doing 30.000000 seconds of 'work' on 1 processor,
+> which should take 30.000000 seconds with 0.800000 parallel proportion of the workload.
 >
->   Hello, World! I am process 0 of 1 on {{ site.remote.node }}. I will do all the serial 'work' for 4.500 seconds.
->   Hello, World! I am process 0 of 1 on {{ site.remote.node }}. I will do parallel 'work' for 25.500 seconds.
->
-> Total execution time (according to rank 0): 30.033 seconds
+>  Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do all the > serial 'work' for 6.084767 seconds.
+>  Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do parallel 'work' for 25.862491 seconds.
+
+> Total execution time (according to rank 0): 31.955224 seconds
+> Complete
+> 
+> ======================================================================================
+>                   Resource Usage on 2025-03-11 15:00:09:
+>    Job Id:             136784880.gadi-pbs
+>    Project:            cd82
+>    Exit Status:        0
+>    Service Units:      0.08
+>    NCPUs Requested:    4                      NCPUs Used: 4               
+>                                            CPU Time Used: 00:00:01        
+>    Memory Requested:   3.0GB                 Memory Used: 204.98MB        
+>    Walltime requested: 00:30:00            Walltime Used: 00:00:34        
+>    JobFS requested:    100.0MB                JobFS used: 0B              
+> ======================================================================================
+> 
 > ```
 > {: .output}
 {: .solution}
 
 As we saw before, two of the `amdahl` program flags set the amount of work and
 the proportion of that work that is parallel in nature. Based on the output, we
-can see that the code uses a default of 30 seconds of work that is 85%
+can see that the code uses a default of 30 seconds of work that is 80%
 parallel. The program ran for just over 30 seconds in total, and if we run the
-numbers, it is true that 15% of it was marked 'serial' and 85% was 'parallel'.
+numbers, it is true that 20% of it was marked 'serial' and 80 was 'parallel'.
 
 Since we only gave the job one CPU, this job wasn't really parallel: the same
-processor performed the 'serial' work for 4.5 seconds, then the 'parallel' part
-for 25.5 seconds, and no time was saved. The cluster can do better, if we ask.
+processor performed the 'serial' work for 6 seconds, then the 'parallel' part
+for 25.8 seconds, and no time was saved. The cluster can do better, if we ask.
 
 ## Running the Parallel Job
 
@@ -278,24 +293,42 @@ As before, use the status commands to check when your job runs.
 ```
 {: .language-bash}
 ```
-slurm-347178.out  parallel-job.sh  slurm-347087.out  serial-job.sh  amdahl  README.md  LICENSE.txt
+parallel-job.e136785026  parallel-job.o136785026  parallel-job.sh  serial-job.sh  amdahl  README.md  LICENSE.txt
 ```
 {: .output}
 ```
-{{ site.remote.prompt }} cat slurm-347178.out
+{{ site.remote.prompt }} cat parallel-job.o136785026
 ```
 {: .language-bash}
 ```
-Doing 30.000 seconds of 'work' on 4 processors,
-which should take 10.875 seconds with 0.850 parallel proportion of the workload.
+Loading python3/3.12.1
+  Loading requirement: intel-mkl/2023.2.0
+/home/578/am9079
+Doing 30.000000 seconds of 'work' on 4 processors,
+ which should take 12.000000 seconds with 0.800000 parallel proportion of the workload.
 
-  Hello, World! I am process 0 of 4 on {{ site.remote.node }}. I will do all the serial 'work' for 4.500 seconds.
-  Hello, World! I am process 2 of 4 on {{ site.remote.node }}. I will do parallel 'work' for 6.375 seconds.
-  Hello, World! I am process 1 of 4 on {{ site.remote.node }}. I will do parallel 'work' for 6.375 seconds.
-  Hello, World! I am process 3 of 4 on {{ site.remote.node }}. I will do parallel 'work' for 6.375 seconds.
-  Hello, World! I am process 0 of 4 on {{ site.remote.node }}. I will do parallel 'work' for 6.375 seconds.
+  Hello, World! I am process 0 of 4 on gadi-cpu-clx-2663.gadi.nci.org.au. I will do all the serial 'work' for 6.653771 seconds.
+  Hello, World! I am process 0 of 4 on gadi-cpu-clx-2663.gadi.nci.org.au. I will do parallel 'work' for 6.810345 seconds.
+  Hello, World! I am process 2 of 4 on gadi-cpu-clx-2663.gadi.nci.org.au. I will do parallel 'work' for 7.129884 seconds.
+  Hello, World! I am process 1 of 4 on gadi-cpu-clx-2663.gadi.nci.org.au. I will do parallel 'work' for 6.648600 seconds.
+  Hello, World! I am process 3 of 4 on gadi-cpu-clx-2663.gadi.nci.org.au. I will do parallel 'work' for 6.188052 seconds.
 
-Total execution time (according to rank 0): 10.888 seconds
+Total execution time (according to rank 0): 13.474482 seconds
+Complete
+
+======================================================================================
+                  Resource Usage on 2025-03-11 15:00:54:
+   Job Id:             136785026.gadi-pbs
+   Project:            cd82
+   Exit Status:        0
+   Service Units:      0.04
+   NCPUs Requested:    4                      NCPUs Used: 4               
+                                           CPU Time Used: 00:00:24        
+   Memory Requested:   3.0GB                 Memory Used: 601.54MB        
+   Walltime requested: 00:30:00            Walltime Used: 00:00:17        
+   JobFS requested:    100.0MB                JobFS used: 0B              
+======================================================================================
+
 ```
 {: .output}
 
@@ -306,15 +339,13 @@ Total execution time (according to rank 0): 10.888 seconds
 >
 > > ## Solution
 > >
-> > The parallel job did take _less_ time: 11 seconds is better than 30!
-> > But it is only a 2.7× improvement, not 4×.
+> > The parallel job did take _less_ time: 12 seconds is better than 30!
+> > But it is only a 2.5× improvement, not 4×.
 > >
 > > Look at the job output:
 > >
-> > * While "process 0" did serial work, processes 1 through 3 did their
+> > * While "process 0" did serial work initially, all processes 0 through 3 then did their
 > >   parallel work.
-> > * While process 0 caught up on its parallel work,
-> >   the rest did nothing at all.
 > >
 > > Process 0 always has to finish its serial task before it can start on the
 > > parallel work. This sets a lower limit on the amount of time this job will
