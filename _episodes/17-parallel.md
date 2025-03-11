@@ -50,6 +50,17 @@ If you disconnected, log back in to the cluster.
 
 NCI do not recommend installing packages directly using pip install. Instead,the recommendation is using a python virtual environment in the /scratch, which you can then direct pip install to do your installations into.  When using pip directly the packages will be installed in the /home/$USER directory and the space allocated for that directory is very limited. 
 
+## Define where the Python libraries should be installed
+
+Let's tell Python to download the python libraries into the /scratch folder. 
+
+```
+{{ site.local.prompt }} mkdir /scratch/cd82/YourUserName/pythoninstalls/
+{{ site.local.prompt }} python3 -m venv /scratch/cd82/YourUserName/pythoninstalls/
+```
+{: .language-bash}
+
+
 ## Install the Amdahl Program
 
 With the Amdahl source code on the cluster, we can install it, which will
