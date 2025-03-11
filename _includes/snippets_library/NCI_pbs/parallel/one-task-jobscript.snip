@@ -1,17 +1,27 @@
 ```
-{{ site.remote.bash_shebang }}
-{{ site.sched.comment }} {{ site.sched.flag.name }} solo-job
-{{ site.sched.comment }} -l mem=3G
-{{ site.sched.comment }} -l h_rt=00:30:00
-{{ site.sched.comment }} -pe mpi 1
-{{ site.sched.comment }} -cwd
+#!/bin/bash
+#PBS -P cd82
+#PBS -N solo-job
+#PBS -l mem=3gb
+#PBS -l walltime=00:30:00
+#PBS -l storage=scratch/cd82
+#PBS -l wd
 
-# Load the computing environment we need
 module load python3
 module unload compilers mpi
-module load mpi4py
+module load openmpi
+
+pwd
+
+source /scratch/cd82/YourUserName/pythoninstalls/bin/activate
 
 # Execute the task
 amdahl
+
+deactivate
+
+echo "Complete"
+
+
 ```
 {: .language-bash}
