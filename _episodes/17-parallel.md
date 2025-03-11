@@ -104,7 +104,7 @@ or `pip`, to install it in your ("user") home directory:
 
 ```
 {{ site.remote.prompt }} cd amdahl
-{{ site.remote.prompt }} python3 -m pip install --user .
+{{ site.remote.prompt }} python3 -m pip install .
 ```
 {: .language-bash}
 
@@ -121,76 +121,8 @@ or `pip`, to install it in your ("user") home directory:
 ### MPI for Python
 
 The Amdahl code has one dependency: __mpi4py__.
-If it hasn't already been installed on the cluster, `pip` will attempt to
-collect mpi4py from the Internet and install it for you.
-If this fails due to a one-way firewall, you must retrieve mpi4py on your
-local machine and upload it, just as we did for Amdahl.
 
-> ## Retrieve and Upload `mpi4py`
->
-> If installing Amdahl failed because mpi4py could not be installed,
-> retrieve the tarball from <https://github.com/mpi4py/mpi4py/tarball/master>
-> then `rsync` it to the cluster, extract, and install:
->
-> ```
-> {{ site.local.prompt }} wget -O mpi4py.tar.gz https://github.com/mpi4py/mpi4py/releases/download/3.1.4/mpi4py-3.1.4.tar.gz
-> {{ site.local.prompt }} scp mpi4py.tar.gz {{ site.remote.user }}@{{ site.remote.login }}:
-> # or
-> {{ site.local.prompt }} rsync -avP mpi4py.tar.gz {{ site.remote.user }}@{{ site.remote.login }}:
-> ```
-> {: .language-bash}
->
-> ```
-> {{ site.local.prompt }} ssh {{ site.remote.user }}@{{ site.remote.login }}
-> {{ site.remote.prompt }} tar -xvzf mpi4py.tar.gz  # extract the archive
-> {{ site.remote.prompt }} mv mpi4py* mpi4py        # rename the directory
-> {{ site.remote.prompt }} cd mpi4py
-> {{ site.remote.prompt }} python3 -m pip install --user .
-> {{ site.remote.prompt }} cd ../amdahl
-> {{ site.remote.prompt }} python3 -m pip install --user .
-> ```
-> {: .language-bash}
-{: .discussion}
 
-> ## If `pip` Raises a Warning...
->
-> `pip` may warn that your user package binaries are not in your PATH.
->
-> ```
-> WARNING: The script amdahl is installed in "${HOME}/.local/bin" which is
-> not on PATH. Consider adding this directory to PATH or, if you prefer to
-> suppress this warning, use --no-warn-script-location.
-> ```
-> {: .warning}
->
-> To check whether this warning is a problem, use `which` to search for the
-> `amdahl` program:
->
-> ```
-> {{ site.remote.prompt }} which amdahl
-> ```
-> {: .language-bash}
->
-> If the command returns no output, displaying a new prompt, it means the file
-> `amdahl` has not been found. You must update the environment variable named
-> `PATH` to include the missing folder.
-> Edit your shell configuration file as follows, then log off the cluster and
-> back on again so it takes effect.
->
-> ```
-> {{ site.remote.prompt }} nano ~/.bashrc
-> {{ site.remote.prompt }} tail ~/.bashrc
-> ```
-> {: .language-bash}
-> ```
-> export PATH=${PATH}:${HOME}/.local/bin
-> ```
-> {: .output}
->
-> After logging back in to {{ site.remote.login }}, `which` should be able to
-> find `amdahl` without difficulties.
-> If you had to load a Python module, load it again.
-{: .discussion}
 
 ## Help!
 
