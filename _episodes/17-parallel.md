@@ -407,27 +407,43 @@ As before, use the status commands to check when your job runs.
 ```
 {: .language-bash}
 ```
-slurm-347271.out  parallel-job.sh  slurm-347178.out  slurm-347087.out  serial-job.sh  amdahl  README.md  LICENSE.txt
+parallel-job.e136785026  parallel-job.o136785026  parallel-job.sh  serial-job.sh  amdahl  README.md  LICENSE.txt
 ```
 {: .output}
 ```
-{{ site.remote.prompt }} cat slurm-347178.out
+{{ site.remote.prompt }} parallel-job.o136785026
 ```
 {: .language-bash}
 ```
-which should take 7.688 seconds with 0.850 parallel proportion of the workload.
+Doing 30.000000 seconds of 'work' on 8 processors,
+ which should take 9.000000 seconds with 0.800000 parallel proportion of the workload.
 
-  Hello, World! I am process 4 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
-  Hello, World! I am process 0 of 8 on {{ site.remote.node }}. I will do all the serial 'work' for 4.500 seconds.
-  Hello, World! I am process 2 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
-  Hello, World! I am process 1 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
-  Hello, World! I am process 3 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
-  Hello, World! I am process 5 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
-  Hello, World! I am process 6 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
-  Hello, World! I am process 7 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
-  Hello, World! I am process 0 of 8 on {{ site.remote.node }}. I will do parallel 'work' for 3.188 seconds.
+  Hello, World! I am process 0 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do all the serial 'work' for 6.846490 seconds.
+  Hello, World! I am process 0 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.222941 seconds.
+  Hello, World! I am process 1 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.531078 seconds.
+  Hello, World! I am process 2 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.399059 seconds.
+  Hello, World! I am process 3 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.050627 seconds.
+  Hello, World! I am process 4 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.283996 seconds.
+  Hello, World! I am process 5 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.206499 seconds.
+  Hello, World! I am process 6 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.224381 seconds.
+  Hello, World! I am process 7 of 8 on gadi-cpu-clx-2624.gadi.nci.org.au. I will do parallel 'work' for 3.565986 seconds.
 
-Total execution time (according to rank 0): 7.697 seconds
+Total execution time (according to rank 0): 10.082487 seconds
+Complete
+
+======================================================================================
+                  Resource Usage on 2025-03-11 16:51:43:
+   Job Id:             136798096.gadi-pbs
+   Project:            cd82
+   Exit Status:        0
+   Service Units:      0.06
+   NCPUs Requested:    8                      NCPUs Used: 8               
+                                           CPU Time Used: 00:00:58        
+   Memory Requested:   3.0GB                 Memory Used: 974.06MB        
+   Walltime requested: 00:30:00            Walltime Used: 00:00:13        
+   JobFS requested:    100.0MB                JobFS used: 0B              
+======================================================================================
+
 ```
 {: .output}
 
@@ -446,22 +462,22 @@ Now, let's summarize the amount of time it took each job to run:
 
 | Number of CPUs | Runtime (sec) |
 | ---            | ---           |
-| 1              | 30.033        |
-| 4              | 10.888        |
-| 8              |  7.697        |
+| 1              | 31.955224        |
+| 4              | 13.474482        |
+| 8              | 10.082        |
 
 Then, use the first row to compute speedups _S_, using Python as a command-line calculator:
 
 ```
-{{ site.remote.prompt }} for n in 30.033 10.888 7.697; do python3 -c "print(30.033 / $n)"; done
+{{ site.remote.prompt }} for n in 31.955 13.474 10.082; do python3 -c "print(31.955 / $n)"; done
 ```
 {: .language-bash}
 
 | Number of CPUs | Speedup | Ideal |
 | ---            | ---     | ---   |
 | 1              | 1.0     | 1     |
-| 4              | 2.75    | 4     |
-| 8              | 3.90    | 8     |
+| 4              | 2.3    | 4     |
+| 8              | 3.169    | 8     |
 
 The job output files have been telling us that this program is performing 85%
 of its work in parallel, leaving 15% to run in serial. This seems reasonably
