@@ -57,6 +57,7 @@ Let's tell Python to download the python libraries into the /scratch folder.
 ```
 {{ site.local.prompt }} mkdir /scratch/cd82/YourUserName/pythoninstalls/
 {{ site.local.prompt }} python3 -m venv /scratch/cd82/YourUserName/pythoninstalls/
+{{ site.local.prompt }} source /scratch/cd82/YourUserName/pythoninstalls/bin/activate
 ```
 {: .language-bash}
 
@@ -73,6 +74,21 @@ or `pip`, to install it in your ("user") home directory:
 {{ site.remote.prompt }} python3 -m pip install --user .
 ```
 {: .language-bash}
+
+To confirm that this has worked, we can use 'which'. Your bash prompt will also now have '(pythoninstalls) ' at the beginning. 
+
+```
+(pythoninstalls) {{ site.remote.prompt }} which python
+```
+{: .language-bash}
+
+```
+/scratch/cd82/am9079/pythoninstalls/bin/python.
+```
+{: .output}
+
+Fantastic! We can see that we are now pointing to the correct python library location.
+
 
 > ## Amdahl is Python Code
 >
