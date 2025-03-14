@@ -26,15 +26,15 @@ sched:
     user: "-u yourUsername"
     interactive: "-I "
     name: "-N"
-    histdetail: "-j"
+    histdetail: "-fx"
     time: "-l walltime=<HH:MM:SS>"
     queue: "-q"
   del: "qdel"
   interactive: "qrsh"
   info: "qhost"
   comment: "#$ "
-  hist: "jobhist"
-  hist_filter: ""
+  hist: "qstat -fx "
+  hist_filter: "qstat -fx "
   bash_shebang: "#!/bin/bash -l"
 
 episode_order:
