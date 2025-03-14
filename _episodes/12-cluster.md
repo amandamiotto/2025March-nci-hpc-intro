@@ -256,11 +256,27 @@ For example, we can view all of the compute nodes by running the command
 `{{ site.sched.info }}`.
 
 ```
-{{ site.remote.prompt }} {{ site.sched.info }}
+{{ site.remote.prompt }} pbsnodes -av
 ```
 {: .language-bash}
 
-{% include {{ site.snippets }}/cluster/queue-info.snip %}
+```
+gadi-cpu-clx-0001
+     Mom = gadi-cpu-clx-0001.gadi.nci.org.au
+     ntype = PBS
+     state = free
+     pcpus = 96
+     jobs = 137009994.gadi-pbs/0, 137009026.gadi-pbs/1, 137009026.gadi-pbs/2, 137009026.gadi-pbs/3, 137009026.gadi-pbs/4, 137009026.gadi-pbs/5, 137009026.gadi-pbs/6, 137009026.gadi-pbs/7, 137009026.gadi-pbs/8, 137009026.gadi-pbs/9, 137009026.gadi-pbs/10, 137009026.gadi-pbs/11, 137009026.gadi-pbs/12, 137009026.gadi-pbs/13, 137009026.gadi-pbs/14, 137009026.gadi-pbs/15, 137009026.gadi-pbs/16, 137009026.gadi-pbs/17, 137009026.gadi-pbs/18, 137009026.gadi-pbs/19, 137009026.gadi-pbs/20, 137009026.gadi-pbs/21, 137009026.gadi-pbs/22, 137009026.gadi-pbs/23, 137009026.gadi-pbs/24, 137009994.gadi-pbs/25, 137009994.gadi-pbs/26, 137009994.gadi-pbs/27, 137009994.gadi-pbs/28, 137009994.gadi-pbs/29, 137009994.gadi-pbs/30, 137009994.gadi-pbs/31, 137009994.gadi-pbs/32, 137009994.gadi-pbs/33, 137009995.gadi-pbs/34, 137009995.gadi-pbs/35, 137009995.gadi-pbs/36, 137009995.gadi-pbs/37, 137009995.gadi-pbs/38, 137009995.gadi-pbs/39, 137009995.gadi-pbs/40, 137009995.gadi-pbs/41, 137009995.gadi-pbs/42, 137009995.gadi-pbs/43
+     resources_available.arch = linux
+     resources_available.host = gadi-cpu-clx-0001
+     resources_available.jobfs = 429496729600b
+     resources_available.mem = 201326592kb
+     resources_available.ncpus = 48
+     resources_available.ngpus = 0
+cont....
+```
+{: .output}
+
 
 A lot of the nodes are busy running work for other users: we are not alone
 here!
