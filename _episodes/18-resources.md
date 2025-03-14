@@ -49,34 +49,107 @@ finish and free up the resources needed to match what you asked for.
 
 Since we already submitted `amdahl` to run on the cluster, we can query the
 scheduler to see how long our job took and what resources were used. We will
-use `{{ site.sched.hist }}` to get statistics about `parallel-job.sh`.
+use `qstat -fx` to get statistics about `parallel-job.sh`.
 
 ```
-{{ site.remote.prompt }} {{ site.sched.hist }}
-```
-{: .language-bash}
-
-{% include {{ site.snippets }}/resources/account-history.snip %}
-
-This shows all the jobs we ran today (note that there are multiple entries per
-job).
-To get info about a specific job (for example, 347087), we change command
-slightly.
-
-```
-{{ site.remote.prompt }} {{ site.sched.hist }} {{ site.sched.flag.histdetail }} 347087
+{{ site.remote.prompt }} qstat -fH 137011321.gadi-pbs
 ```
 {: .language-bash}
+```
+
+gadi-pbs: 
+                                                                 Req'd  Req'd   Elap
+Job ID               Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+-------------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+137011321.gadi-pbs   am9079   normal-* solo-job   34923*   1   4  3072m 00:30 F 00:00
+
+```
+{: .output}
+
+
+This shows us a summary of our pbs job run. We can get more indepth too - 
+
+```
+{{ site.remote.prompt }} qstat -fx 137011321.gadi-pbs
+```
+{: .language-bash}
+```
+Job Id: 137011321.gadi-pbs
+    Job_Name = solo-job
+    Job_Owner = am9079@gadi-login-09.gadi.nci.org.au
+    resources_used.cpupercent = 5
+    resources_used.cput = 00:00:01
+    resources_used.jobfs = 0b
+    resources_used.mem = 404316kb
+    resources_used.ncpus = 4
+    resources_used.vmem = 404316kb
+    resources_used.walltime = 00:00:34
+    job_state = F
+    queue = normal-exec
+    server = gadi-pbs-01.gadi.nci.org.au
+    Checkpoint = u
+    ctime = Fri Mar 14 16:57:24 2025
+    Error_Path = gadi.nci.org.au:/home/578/am9079/solo-job.e137011321
+    exec_host = gadi-cpu-clx-2119/21*4
+    exec_vnode = (gadi-cpu-clx-2119:ncpus=4:mem=3145728kb:jobfs=102400kb)
+    group_list = cd82
+    Hold_Types = n
+    Join_Path = n
+    Keep_Files = n
+    Mail_Points = a
+    mtime = Fri Mar 14 16:58:41 2025
+    Output_Path = gadi.nci.org.au:/home/578/am9079/solo-job.o137011321
+    Priority = 0
+    qtime = Fri Mar 14 16:57:24 2025
+    Rerunable = False
+    Resource_List.jobfs = 104857600b
+    Resource_List.mem = 3221225472b
+    Resource_List.mpiprocs = 4
+    Resource_List.ncpus = 4
+    Resource_List.nodect = 1
+    Resource_List.place = free
+    Resource_List.select = 1:ncpus=4:mpiprocs=4:mem=3221225472:job_tags=normal:
+	jobfs=104857600
+    Resource_List.storage = scratch/cd82
+    Resource_List.walltime = 00:30:00
+    Resource_List.wd = 1
+    stime = Fri Mar 14 16:57:57 2025
+    obittime = Fri Mar 14 16:58:41 2025
+    session_id = 3492344
+    jobdir = /home/578/am9079
+    substate = 92
+    Variable_List = PBS_O_HOME=/home/578/am9079,PBS_O_LANG=en_AU.UTF-8,
+	PBS_O_LOGNAME=am9079,
+	PBS_O_PATH=/home/578/am9079/.local/bin:/home/578/am9079/bin:/opt/pbs/d
+	efault/bin:/opt/nci/bin:/opt/bin:/opt/Modules/v4.3.0/bin:/bin:/usr/bin:
+	/usr/local/sbin:/usr/sbin:/opt/pbs/default/bin,
+	PBS_O_MAIL=/var/spool/mail/am9079,PBS_O_SHELL=/bin/bash,
+	PBS_O_TZ=:/etc/localtime,PBS_O_INTERACTIVE_AUTH_METHOD=resvport,
+	PBS_O_HOST=gadi-login-09.gadi.nci.org.au,
+	PBS_O_WORKDIR=/home/578/am9079,PBS_O_SYSTEM=Linux,PROJECT=cd82,
+	PBS_NCI_HT=0,PBS_NCI_STORAGE=scratch/cd82,PBS_NCI_IMAGE=,PBS_NCPUS=4,
+	PBS_NGPUS=0,PBS_NNODES=1,PBS_NCI_NCPUS_PER_NODE=48,
+	PBS_NCI_NUMA_PER_NODE=4,PBS_NCI_NCPUS_PER_NUMA=12,PBS_VMEM=3221225472,
+	PBS_NCI_WD=1,PBS_NCI_JOBFS=104857600b,PBS_NCI_LAUNCH_COMPATIBILITY=0,
+	PBS_NCI_FS_GDATA1=0,PBS_NCI_FS_GDATA1A=0,PBS_NCI_FS_GDATA1B=0,
+	PBS_NCI_FS_GDATA2=0,PBS_NCI_FS_GDATA3=0,PBS_NCI_FS_GDATA4=0,
+	PBS_O_QUEUE=normal,PBS_JOBFS=/jobfs/137011321.gadi-pbs
+    comment = Job run at Fri Mar 14 at 16:57 on (gadi-cpu-clx-2119:ncpus=4:mem=
+	3145728kb:jobfs=102400kb) and finished
+    etime = Fri Mar 14 16:57:24 2025
+    run_count = 1
+    Stageout_status = 1
+    Exit_status = 0
+    Submit_arguments = serial-job.sh
+    history_timestamp = 1741931921
+    project = cd82
+    Submit_Host = gadi-login-09.gadi.nci.org.au
+
+```
+{: .output}
 
 It will show a lot of info; in fact, every single piece of info collected on
-your job by the scheduler will show up here. It may be useful to redirect this
-information to `less` to make it easier to view (use the left and right arrow
-keys to scroll through fields).
-
-```
-{{ site.remote.prompt }} {{ site.sched.hist }} {{ site.sched.flag.histdetail }} 347087 | less -S
-```
-{: .language-bash}
+your job by the scheduler will show up here. 
 
 > ## Discussion
 >
