@@ -287,6 +287,8 @@ typically logon to or interact with these machines directly, they enable a
 number of key features like ensuring our user account and files are available
 throughout the HPC system.
 
+You can get more information about queues and hardware at [Queue limits](https://opus.nci.org.au/spaces/Help/pages/236881198/Queue+Limits...) or [Queue structure](https://opus.nci.org.au/spaces/Help/pages/236880996/Queue+Structure+on+Gadi...).
+
 ## What's in a Node?
 
 All of the nodes in an HPC system have the same components as your own laptop
