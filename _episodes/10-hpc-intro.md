@@ -28,6 +28,7 @@ of the desktop or laptop computer where they started:
   run at a time (in __serial__) on the laptop. Since each of the 1000 runs is
   independent of all others, and given enough computers, it's theoretically
   possible to run them all at once (in __parallel__).
+  
 * A genomics researcher has been using small datasets of sequence data, but
   soon will be receiving a new type of sequencing data that is 10 times as
   large. It's already challenging to open the datasets on a computer --
@@ -35,6 +36,7 @@ of the desktop or laptop computer where they started:
   problem, the calculations required might be impossible to parallelize, but a
   computer with __more memory__ would be required to analyze the much larger
   future data set.
+  
 * An engineer is using a fluid dynamics package that has an option to run in
   parallel. So far, this option was not used on a desktop. In going from 2D
   to 3D simulations, the simulation time has more than tripled. It might be
@@ -48,13 +50,17 @@ of the desktop or laptop computer where they started:
   it's theoretically possible to distribute the calculations across multiple
   computers communicating over a shared network.
 
+
 In all these cases, access to more (and larger) computers is needed. Those
 computers should be usable at the same time, __solving many researchers'
 problems in parallel__.
 
+
 ## What is a High Performance Compute Cluster?
 
 HPC's are basically a lot of computers joined together. Their computers and configurations come in different shapes and sizes, to handle different needs and use cases. They are run with a 'head node', who coordinates what jobs go where.
+
+
 
 #### Delivering 'boxes' of calculations
 
@@ -72,6 +78,7 @@ Our head node is our truck depo - it keeps track of what jobs go where, what typ
 Open the [HPC Jargon Buster]({{ site.url }}{{ site.baseurl }}/files/jargon.html#p1)
 in a new tab. To present the content, press `C` to open a **c**lone in a
 separate window, then press `P` to toggle **p**resentation mode.
+
 
 > ## I've Never Used a Server, Have I?
 >
