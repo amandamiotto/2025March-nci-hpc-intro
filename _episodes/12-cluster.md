@@ -72,7 +72,7 @@ devices are anchored to the "root" directory, which is `/`:
 {{ site.remote.prompt }} ls /
 ```
 {: .language-bash}
-```
+
 
 {% include {{ site.snippets }}/cluster/root-folders.snip %}
 
