@@ -226,7 +226,7 @@ We can see fellow users and learners who are logged into the system right now.
 >  moving data to and from the system at a high speed.
 > These data-mover nodes have the domain name 'gadi-dm.nci.org.au',
 > and you can use this when moving data to and from the system.
-> We'll try them out in our transferring files lesson.
+> We'll delve into this more in our transferring files lesson.
 {: .callout}
 
 The real work on a cluster gets done by the _compute_ (or _worker_) _nodes_.
