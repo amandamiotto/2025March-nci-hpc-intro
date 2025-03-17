@@ -36,7 +36,7 @@ memory or compute time a program will need.
 
 A convenient way of figuring out the resources required for a job to run
 successfully is to submit a test job, and then ask the scheduler about its
-impact using `{{ site.sched.hist }}`. You can use this knowledge to set up the
+impact using `qstat -fH`. You can use this knowledge to set up the
 next job with a closer estimate of its load on the system. A good general rule
 is to ask the scheduler for 20% to 30% more time and memory than you expect the
 job to need. This ensures that minor fluctuations in run time or memory use
