@@ -186,16 +186,6 @@ You can check how much quota of storage you have available by using the command 
 
 Data is the better place for longer term storage. BUT NOTE- this is not backed up. You should still keep a copy of any important files on your institute's research data store. The size limit is set by the scheme manager. 
 
-```
-{{ site.remote.prompt }} ls /g/data
-```
-{: .language-bash}
-```
-tmp
-```
-{: .output}
-
-
 
 
 
