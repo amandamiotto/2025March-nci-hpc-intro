@@ -168,9 +168,11 @@ by running `pwd` to print the working directory.
 {: .language-bash}
 
 ```
-{{ site.remote.homedir }}/{{ site.remote.user }}
+{{ site.remote.homedir }}/578/{{ site.remote.user }}
 ```
 {: .output}
+
+578 is our institute code for our QCIF workshop. We'll talk more about this soon.
 
 Great, we know where we are! Let's see what's in our current directory:
 
