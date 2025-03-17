@@ -180,47 +180,46 @@ is running and when it ends:
 Use `ls` to locate the output file. The `-t` flag sorts in
 reverse-chronological order: newest first. What was the output?
 
-> ## Read the Job Output
->
-> The cluster output should be written to a file in the folder you launched the
-> job from. For example,
->
-> ```
-> {{ site.remote.prompt }} ls -t
-> ```
-> {: .language-bash}
-> ```
-> solo-job.o347087 solo-job.e347087 serial-job.sh  amdahl  README.md  LICENSE.txt
-> ```
-> {: .output}
-> ```
-> {{ site.remote.prompt }} cat solo-job.o347087
-> ```
-> {: .language-bash}
-> 
-> ```
-> Doing 30.000000 seconds of 'work' on 1 processor,
-> which should take 30.000000 seconds with 0.800000 parallel proportion of the workload.
->
->  Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do all the > serial 'work' for 6.084767 seconds.
->  Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do parallel 'work' for 25.862491 seconds.
-> Total execution time (according to rank 0): 31.955224 seconds
-> Complete
-> 
-> ======================================================================================
->                   Resource Usage on 2025-03-11 15:00:09:
->    Job Id:             136784880.gadi-pbs
->    Project:            cd82
->    Exit Status:        0
->    Service Units:      0.08
->    NCPUs Requested:    4                      NCPUs Used: 4               
->                                            CPU Time Used: 00:00:01        
->    Memory Requested:   3.0GB                 Memory Used: 204.98MB        
->    Walltime requested: 00:30:00            Walltime Used: 00:00:34        
->    JobFS requested:    100.0MB                JobFS used: 0B              
-> ======================================================================================
-> ```
-> {: .output}
+## Read the Job Output
+The cluster output should be written to a file in the folder you launched the
+job from. For example,
+
+```
+{{ site.remote.prompt }} ls -t
+```
+{: .language-bash}
+```
+solo-job.o347087 solo-job.e347087 serial-job.sh  amdahl  README.md  LICENSE.txt
+```
+{: .output}
+```
+{{ site.remote.prompt }} cat solo-job.o347087
+```
+{: .language-bash}
+
+```
+Doing 30.000000 seconds of 'work' on 1 processor,
+which should take 30.000000 seconds with 0.800000 parallel proportion of the workload.
+
+Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do all the > serial 'work' for 6.084767 seconds.
+Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do parallel 'work' for 25.862491 seconds.
+Total execution time (according to rank 0): 31.955224 seconds
+Complete
+ 
+ ======================================================================================
+                   Resource Usage on 2025-03-11 15:00:09:
+    Job Id:             136784880.gadi-pbs
+    Project:            cd82
+    Exit Status:        0
+    Service Units:      0.08
+    NCPUs Requested:    4                      NCPUs Used: 4               
+                                            CPU Time Used: 00:00:01        
+    Memory Requested:   3.0GB                 Memory Used: 204.98MB        
+    Walltime requested: 00:30:00            Walltime Used: 00:00:34        
+    JobFS requested:    100.0MB                JobFS used: 0B              
+ ======================================================================================
+```
+{: .output}
 > 
 {: .solution}
 
