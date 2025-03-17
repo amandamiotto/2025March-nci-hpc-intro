@@ -87,8 +87,6 @@ $ source /scratch/cd82/YourUsername/pythoninstalls/bin/activate
 # Install Python packages under the activated virtual environment
 $ python3 -m pip install -v --no-binary :all: --cache-dir=$TMPDIR mpi4py
  
-# Deactivate the virtual environment
-$ deactivate
 ```
 {: .language-bash}
 
@@ -115,6 +113,13 @@ or `pip`, to install it in your ("user") home directory:
 ```
 {{ site.remote.prompt }} cd ~/amdahl
 {{ site.remote.prompt }} python3 -m pip install .
+```
+{: .language-bash}
+
+## To finish - deactivate
+
+```
+$ deactivate
 ```
 {: .language-bash}
 
