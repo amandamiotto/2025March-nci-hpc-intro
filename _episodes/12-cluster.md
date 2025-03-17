@@ -212,8 +212,7 @@ Who else is logged in to the login node?
 ```
 {: .language-bash}
 
-This may show only your user ID, but there are likely several other people
-(including fellow learners) connected right now.
+We can see fellow users and learners who are logged into the system right now.
 
 > ## Dedicated Transfer Nodes
 >
