@@ -197,13 +197,13 @@ reverse-chronological order: newest first. What was the output?
 > {{ site.remote.prompt }} cat solo-job.o347087
 > ```
 > {: .language-bash}
+> 
 > ```
 > Doing 30.000000 seconds of 'work' on 1 processor,
 > which should take 30.000000 seconds with 0.800000 parallel proportion of the workload.
 >
 >  Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do all the > serial 'work' for 6.084767 seconds.
 >  Hello, World! I am process 0 of 1 on gadi-cpu-clx-0792.gadi.nci.org.au. I will do parallel 'work' for 25.862491 seconds.
-
 > Total execution time (according to rank 0): 31.955224 seconds
 > Complete
 > 
@@ -219,9 +219,9 @@ reverse-chronological order: newest first. What was the output?
 >    Walltime requested: 00:30:00            Walltime Used: 00:00:34        
 >    JobFS requested:    100.0MB                JobFS used: 0B              
 > ======================================================================================
-> 
 > ```
 > {: .output}
+> 
 {: .solution}
 
 As we saw before, two of the `amdahl` program flags set the amount of work and
