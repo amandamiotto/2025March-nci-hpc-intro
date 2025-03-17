@@ -73,11 +73,9 @@ devices are anchored to the "root" directory, which is `/`:
 ```
 {: .language-bash}
 ```
-bin   etc   lib64  proc  sbin     sys  var
-boot  {{ site.remote.homedir | replace: "/", "" }}  mnt    root  scratch  tmp  working
-dev   lib   opt    run   srv      usr
-```
-{: .output}
+
+{% include {{ site.snippets }}/cluster/root-folders.snip %}
+
 
 The "{{ site.remote.homedir | replace: "/", "" }}" directory is the one where
 we generally want to keep all of our files. Other folders on a UNIX OS contain
