@@ -160,7 +160,7 @@ may also notice that the current hostname is also part of our prompt!)
 {: .output}
 
 So, we're definitely on the remote machine. Next, let's find out where we are
-by running `pwd` to __p__rint the __w__orking __d__irectory.
+by running `pwd` to print the working directory.
 
 ```
 {{ site.remote.prompt }} pwd
