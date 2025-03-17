@@ -192,4 +192,7 @@ get your job dispatched earlier.
 > {: .solution}
 {: .challenge}
 
+
+Another really good resource for benchmarking and optimisation can be found [at this good code etiquette page](https://github.com/CurtinIDS/good-code-etiquette).
+
 {% include links.md %}
