@@ -298,9 +298,9 @@ connect to a shared, remote fileserver or cluster of servers.
 ### Let's look at our first example again.
 
 > 1. A statistics student wants to cross-validate a model. This involves running
->  the model 1000 times -- but each run takes an hour. Running the model on
->  a laptop will take over a month!
-{: .callout}
+>    the model 1000 times -- but each run takes an hour. Running the model on
+>    a laptop will take over a month!
+>    {: .callout}
 
 This student has lots of little boxes - we need multiple delivery trucks so boxes can be delivered independantly. We don't have to wait for box 1 to be delivered to deliver box 2.
 
