@@ -260,7 +260,8 @@ later episode of this lesson.
 > >
 > > ```
 > > {{ site.remote.bash_shebang }}
-> > {{ site.sched.comment }} {{ site.sched.flag.time }} 00:01 
+> > #PBS -N long-job
+> > #PBS -l walltime=00:01:00
 > >
 > > echo -n "This script is running on "
 > > sleep 20 # time in seconds
