@@ -112,7 +112,8 @@ system files and change as you install new software or upgrade your OS.
 
 QCIF training Project Number: ***cd82***
 
-QCIF training Institute Number: ***578***
+You will have a default project when you log in - however you can switch to our project today by running
+`switchproj cd82`
 
 
 Post workshop, when you are allocated an account on NCI, you can check your Project number and Institute number via [The NCI account portal](https://my.nci.org.au/mancini/login)
