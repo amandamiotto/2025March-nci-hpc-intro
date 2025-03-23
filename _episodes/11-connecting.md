@@ -140,6 +140,9 @@ Log in with your NCI username (not email) and password, and click 'Gadi Terminal
    alt="Screenshot of ARI" caption="" %}
 
 
+Please note: ARE times out after 15 minutes - you may need to type `ls` every ten minutes to keep it logged in.
+
+
 ## Looking Around Your Remote Home
 
 Very often, many users are tempted to think of a high-performance computing
@@ -172,7 +175,7 @@ by running `pwd` to print the working directory.
 ```
 {: .output}
 
-578 is our institute code for our QCIF workshop. We'll talk more about this soon.
+578 is my personal institution identifier. We'll talk more about this soon.
 
 Great, we know where we are! Let's see what's in our current directory:
 
